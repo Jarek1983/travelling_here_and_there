@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
+  	# binding.pry
     @articles = Article.all.order(id: :desc)
   end
 
@@ -9,6 +10,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
+  	# binding.pry https://gist.github.com/lfender6445/9919357
+  	# https://github.com/rweng/pry-rails
   	article_params = params.require(:article).permit(:title, :text) #permit stosujemy tylko wtedy, gdy modyfikujemy rekord
   	@article = Article.new(article_params)
       if @article.save
