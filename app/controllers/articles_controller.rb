@@ -5,14 +5,18 @@ class ArticlesController < ApplicationController
   end
 
   def new
-
+    @article = Article.new
   end
 
   def create
   	article_params = params.require(:article).permit(:title, :text) #permit stosujemy tylko wtedy, gdy modyfikujemy rekord
   	@article = Article.new(article_params)
-    @article.save
-    redirect_to article_path(@article)
+      if
+        @article.save
+        redirect_to article_path(@article)
+      else
+        render 'new'
+      end
   end
 
   def show
