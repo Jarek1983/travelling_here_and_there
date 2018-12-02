@@ -1,6 +1,7 @@
 <h1>My Articles</h1>
 <%= link_to 'New Article', new_article_path %>
-<table>
+<table class="table">
+  <thead>
   <tr>
     <th>Title</th>
     <th>Text</th>	
@@ -9,6 +10,8 @@
     <th></th>
     <th>Comments</th>
   </tr>	
+ </thead>
+ <tbody>
   <% @articles.each do |article| %>
   <tr>
     <td><%= article.title %> </td>
@@ -20,6 +23,7 @@
     <td><%= article.comments.count %> </td>
   </tr>
   <% end %>
+  </tbody>
 </table>
 
 Articles: <%= @articles.count %>
