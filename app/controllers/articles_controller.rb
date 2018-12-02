@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   def create
   	# binding.pry https://gist.github.com/lfender6445/9919357
   	# https://github.com/rweng/pry-rails
-  	article_params = params.require(:article).permit(:title, :text) #permit stosujemy tylko wtedy, gdy modyfikujemy rekord
+  	# article_params = params.require(:article).permit(:title, :text) #permit stosujemy tylko wtedy, gdy modyfikujemy rekord
   	@article = Article.new(article_params)
       if @article.save
         redirect_to article_path(@article)
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-  	article_params = params.require(:article).permit(:title, :text)
+  	# article_params = params.require(:article).permit(:title, :text)
     @article = Article.find(params[:id])
 	  if @article.update(article_params)
 	    redirect_to article_path(@article)
@@ -43,6 +43,12 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
+  end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:title,:text)
   end
 
 end
