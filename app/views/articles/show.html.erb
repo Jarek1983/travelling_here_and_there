@@ -4,6 +4,12 @@
   <strong>Title:</strong>
     <%= @article.title %>
 </p>
+
+<p>
+  <strong>Time: </strong>
+  <%= @article.created_at.strftime('%A %-B %-d, %Y | %l:%M %p') %>
+</p>
+
 <p>
   <strong>Text: </strong>
     <%= @article.text %>
@@ -15,5 +21,9 @@
 
 <%= render '/comments/form' %>
 
+
+
 <%= link_to 'Back', articles_path %>
 <%= link_to 'Edit', edit_article_path(@article) %>
+<%= link_to 'Delete', article_path(@article), method: :delete, 
+            data: {confirm: 'Are you sure?'} %>
