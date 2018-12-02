@@ -2,18 +2,18 @@
 
  <%= form_for [@article, @comment] do |f| %>
 
-  <p>
+  <div class="form-group">
     <%= f.label :commenter %>
-    <%= f.text_field :commenter %>
-  </p>
+    <%= f.text_field :commenter, class: 'form-control' %>
+  </div>
 
-  <p>
+  <div class="form-group">
     <%= f.label :body %>
-    <%= f.text_area :body %>
-  </p>
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="form-group">
+    <%= f.submit class: 'form-control' %>
+  </div>
   
 <% end %>
