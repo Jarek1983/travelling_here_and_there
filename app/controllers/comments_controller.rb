@@ -3,11 +3,17 @@ class CommentsController < ApplicationController
 
 	def create
 		  # binding.pry
-		  @comment = Comment.new(comment_params)
-		  @comment.article = @article
-		  @comment.save
+		@comment = Comment.new(comment_params)
+		@comment.article = @article
+		@comment.save
 
-		  redirect_to article_path(@article)
+		redirect_to article_path(@article)
+	end
+
+	def destroy
+       @comment = Comment.find(params[:id])
+       @comment.destroy
+       redirect_to article_path(@article)
 	end
 
     private
