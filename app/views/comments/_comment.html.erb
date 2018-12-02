@@ -8,6 +8,17 @@
     <%= simple_format(comment.body) %>
 </p>
 
+<p>
+  <strong>Time: </strong>
+  <%= comment.created_at %>
+</p>
+
 <%= link_to 'Destroy', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete, data: {confirm: 'Are you Certain?'} %>
+<%= link_to 'Edit', edit_article_comment_path(article_id: comment.article.id, id: comment.id) %>
+
 <hr/>
+
+
+
+
 
