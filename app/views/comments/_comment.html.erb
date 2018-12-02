@@ -8,6 +8,6 @@
     <%= comment.body %>
 </p>
 
-<%= link_to 'Destroy', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete %>
+<%= link_to 'Destroy', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete, data: {confirm: 'Are you Certain?'} %>
 <hr/>
 
