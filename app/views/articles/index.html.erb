@@ -15,6 +15,7 @@
     <th>Title</th>
     <th>Text</th>
     <th>Tags</th>
+    <th>Author</th>
     <th></th>
     <th></th>
     <th></th>
@@ -32,6 +33,7 @@
     <!-- x - pojedyńczy tag, article_path - parametry np q:, params[x] -->
       <% end %> 
     </td> 
+    <td><%= article.user.email %> </td>
    
     <td><%= link_to 'Show', article_path(article) %></td> 
     <td><%= link_to 'Edit', edit_article_path(article) %></td> 
