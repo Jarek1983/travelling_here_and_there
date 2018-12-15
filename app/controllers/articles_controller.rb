@@ -16,7 +16,10 @@ class ArticlesController < ApplicationController
   	# https://github.com/rweng/pry-rails
   	# article_params = params.require(:article).permit(:title, :text) #permit stosujemy tylko wtedy, gdy modyfikujemy rekord
   	@article = Article.new(article_params)
+    @article.user = current_user
+    # @article.user_id = current_user.id
       if @article.save
+
         redirect_to article_path(@article)
       else
         render 'new'
