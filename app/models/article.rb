@@ -4,7 +4,7 @@ class Article < ApplicationRecord
 	has_many :comments, dependent: :destroy
 
     def tags=(value)
-       value = sanitize_tags(value) if value.to_a?(String)
+       value = sanitize_tags(value) if value.is_a?(String)
        super(value)
     end
 
