@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
   def show
     # @article = Article.find(params[:id])
     # find_article
-    @comment = Comment.new
+    @comment = Comment.new(commenter: session[:commenter])
   end
 
   def edit
