@@ -3,7 +3,7 @@
 
 <%= form_tag articles_path, method: :get do %>
 <div class="input-group">
-<%= text_field_tag :q, "", class: "form-control" %>
+<%= text_field_tag :q, params[:q], class: "form-control" %>
 <span class="input-group-btn">
 <%= submit_tag "Search", class: "btn btn-default" %>
 </span>
@@ -14,7 +14,7 @@
   <tr>
     <th>Title</th>
     <th>Text</th>
-    <th>Tags</th>	
+    <th>Tags</th>
     <th></th>
     <th></th>
     <th></th>
@@ -26,8 +26,14 @@
   <tr>
     <td><%= article.title %> </td>
     <td><%= article.text %> </td>
-    <td><%= article.tags %> </td>
-    <td><%= link_to 'Show', article_path(article) %></td>	
+    <td> 
+      <% article.tags.each do |x| %>
+     <%= link_to x, articles_path(q: x), class: "badge badge-dark" %>
+    <!-- x - pojedyńczy tag, article_path - parametry np q:, params[x] -->
+      <% end %> 
+    </td> 
+   
+    <td><%= link_to 'Show', article_path(article) %></td> 
     <td><%= link_to 'Edit', edit_article_path(article) %></td> 
     <td><%= link_to 'Delete', article_path(article), method: :delete, 
             data: {confirm: 'Are you sure?'} %></td> 
