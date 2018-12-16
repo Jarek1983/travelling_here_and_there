@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
   def edit
     # @article = Article.find(params[:id])
     # if @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    if current_user != @article.user
+    if current_user != @article.user || current_user.admin?
       flash[:alert] = "You are not allowed to be here"
        redirect_to articles_path
     end
