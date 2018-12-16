@@ -5,9 +5,10 @@ class CommentsController < ApplicationController
 		  # binding.pry
 		@comment = Comment.new(comment_params)
 		@comment.article = @article
+    @comment.user = current_user
 
 		if @comment.save
-      session[:commenter] = @comment.commenter
+      # session[:commenter] = @comment.commenter
       flash[:notice] = "You create comment"
 		  redirect_to article_path(@article)
 	    else
@@ -42,7 +43,7 @@ class CommentsController < ApplicationController
     	@article = Article.find(params[:article_id])
 
 	def comment_params
-		params.require(:comment).permit(:commenter, :body, :article_id)
+		params.require(:comment).permit(:body, :article_id)
 	end		
 end
 end
