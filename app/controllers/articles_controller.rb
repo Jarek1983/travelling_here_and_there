@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     # @article.user_id = current_user.id
       if @article.save
-
+        flash[:notice] = "You create new article"
         redirect_to article_path(@article)
       else
         render 'new'
@@ -34,6 +34,11 @@ class ArticlesController < ApplicationController
 
   def edit
     # @article = Article.find(params[:id])
+    # if @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    if current_user != @article.user
+      flash[:alert] = "You are not allowed to be here"
+       redirect_to articles_path
+    end
   end
 
   def update
@@ -41,6 +46,7 @@ class ArticlesController < ApplicationController
     # @article = Article.find(params[:id])
     # find_article
 	  if @article.update(article_params)
+      flash[:notice] = "You edit article"
 	    redirect_to article_path(@article)
 	  else
 		render 'edit'
@@ -51,6 +57,7 @@ class ArticlesController < ApplicationController
     # @article = Article.find(params[:id])
     # find_article
     @article.destroy
+    flash[:alert] = "You delete article"
     redirect_to articles_path
   end
 
