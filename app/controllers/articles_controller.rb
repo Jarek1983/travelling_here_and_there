@@ -29,9 +29,9 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     # @article = Article.find(params[:id])
     # find_article
-    @comment = Comment.new(commenter: session[:commenter])
   end
 
   def edit
@@ -67,11 +67,12 @@ class ArticlesController < ApplicationController
   private
 
   def authorize_article
-    if current_user != @article.user && !current_user.admin?
+    if current_user != @article.user && !current_user&.admin?
       flash[:alert] = "You are not allowed to be here"
       redirect_to articles_path
       return false
     end
+    true
   end
 
   def article_params
