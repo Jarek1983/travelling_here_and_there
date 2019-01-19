@@ -2,7 +2,7 @@
 
   <% if user_signed_in? %>
 
- <%= form_for [@article, @comment] do |f| %>
+ <%= form_for [@article, @comment], url: article_comments_path(@article, @comment) do |f| %>
 
   <div class="form-group">
     <%= f.label :body %>
