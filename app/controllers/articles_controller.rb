@@ -67,7 +67,7 @@ class ArticlesController < ApplicationController
   private
 
   def authorize_article
-    if current_user != @article.user && !current_user&.admin?
+    if current_user != @article.user && !current_user.admin?
       flash[:alert] = "You are not allowed to be here"
       redirect_to articles_path
       return false
