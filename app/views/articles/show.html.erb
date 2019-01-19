@@ -26,14 +26,17 @@
 </p>
 
 
-
 <h2>Comments</h2>
+
+<button onclick="show_hide()">Click</button>
+  
+  <div id="hide">
 
 <%= render @article.comments %>
 
 <%= render '/comments/form' %>
 
-
+  <div>
 
 <%= link_to 'Back', articles_path %>
 
