@@ -40,6 +40,7 @@ class ArticlesController < ApplicationController
       end
 
       format.json do 
+        sleep(rand((20.0)/10))
         render json: {
           id: @article.id,
           title: @article.title,
