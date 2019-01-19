@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
 		@comment = Comment.new(comment_params)
 		@comment.article = @article
     @comment.user = current_user
+    @like = Like.find_or_initialize_by(article: @article, user: current_user)
 
 		if @comment.save
       # session[:commenter] = @comment.commenter
