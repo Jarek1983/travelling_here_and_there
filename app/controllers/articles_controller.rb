@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   
   def index
   	# binding.pry
-    @articles = Article.all.order(id: :desc)
+    @articles = Article.all.includes(:user).order(id: :desc)
     @articles = @articles.where("? = any(tags)", params[:q]) if params[:q].present?
   end
 
