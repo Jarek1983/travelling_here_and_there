@@ -16,3 +16,29 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
+window.addEventListener('load', function(){
+	console.log("Hello from rails!")
+
+var summaryElements = document.querySelectorAll(".summary");
+
+for(i = 0; i < summaryElements.length; i++) {
+  summaryElements[i].addEventListener("click", function(e){
+  	e.preventDefault();
+
+    var request = new XMLHttpRequest();
+    request.addEventListener("progress", function() {
+      var summary = document.getElementById("summary-" + this.response.id);
+      summary.innerText = "Loading...";
+    })
+    request.open("GET", this.href + ".json");
+    request.responseType = "json";
+    request.addEventListener("load", function(){
+      var summary = document.getElementById("summary-" + this.response.id);
+      summary.innerText = "Comments: " + this.response.comments_count + ", Views count: " + this.response.views_count + ", Likes: " + this.response.likes_count;
+      })
+    this.innerText = "Loading...";
+      request.send();
+    });
+  }
+})
