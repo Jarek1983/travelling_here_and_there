@@ -22,6 +22,7 @@
             <th></th>
             <th></th>
             <th></th>
+            <th></th>
             <th>Comments</th>
           </tr>	
         </thead>
@@ -40,6 +41,8 @@
               <% end %> 
             </td> 
             <td><%= article.user.email %> </td>
+
+            <td><%= link_to "Summary", article_path(article), class: "btn btn-info summary", id: "summary-#{article.id}" %></td>
    
             <td><%= link_to 'Show', article_path(article), class: "btn btn-primary" %></td> 
 
