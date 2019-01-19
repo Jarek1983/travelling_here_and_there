@@ -15,6 +15,12 @@
     <%= @article.text %>
 </p>
 
+<% if sponsored_article? @article %>
+
+  <h3>Artykuł sponsorowany przez firmę <%= @article.company.name %></h3>
+
+<% end %>
+
 <p>
   <strong>Text: </strong>
     <%= @article.user.email %>
@@ -40,6 +46,12 @@
 
 <% end %>
 
+<% if sponsored_article? @article %>
+  
+  <p>Komentarze zablokowane</p>
+  
+<% else %>
+
 <h2>Comments</h2>
 
 <button onclick="show_hide()">Click</button>
@@ -57,6 +69,8 @@
 <% if @article.user == current_user && current_user&.admin? %> 
 
 <%= link_to 'Edit', edit_article_path(@article) %>
+
+<% end %>
 
 <% end %>
 
