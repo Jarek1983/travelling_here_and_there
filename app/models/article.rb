@@ -7,7 +7,8 @@ class Article < ApplicationRecord
   has_many :likes
   has_many :users, through: :likes 
 
-  scope :published, -> {where(published: true)}
+  scope :published, -> {where(published: true)} 
+  scope :most_commented, -> {order(comments_count: :desc).first}
 
   def tags=(value)
     value = sanitize_tags(value) if value.is_a?(String)

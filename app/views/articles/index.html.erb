@@ -1,13 +1,18 @@
 <h1>My Articles</h1>
 
+  <h4>Most commented article is <%= link_to @most_commented.title, article_path(@most_commented) %></h4>
+
     <%= link_to 'New Article', new_article_path, class: "btn btn-primary" %>
 
     <%= form_tag articles_path, method: :get do %>
+
       <div class="input-group">
         <%= text_field_tag :q, params[:q], class: "form-control" %>
+
           <span class="input-group-btn">
             <%= submit_tag "Search", class: "btn btn-default" %>
          </span>
+
       </div>
     <% end %>
 
