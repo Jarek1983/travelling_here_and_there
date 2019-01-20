@@ -1,18 +1,21 @@
 <h1>Artykuły</h1>
 
-<p>
-  <strong>Title:</strong>
+<p><strong>Title:</strong>
+
     <%= @article.title %>
+
 </p>
 
-<p>
-  <strong>Time: </strong>
+<p><strong>Time: </strong>
+
   <%= @article.created_at.strftime('%A %-B %-d, %Y | %l:%M %p') %>
+
 </p>
 
-<p>
-  <strong>Text: </strong>
+<p><strong>Text: </strong>
+
     <%= @article.text %>
+
 </p>
 
 <% if sponsored_article? @article %>
@@ -21,14 +24,16 @@
 
 <% end %>
 
-<p>
-  <strong>Text: </strong>
+<p><strong>Text: </strong>
+
     <%= @article.user.email %>
+
 </p>
 
-<p>
-  <strong class="badge badge-primary">Tags: </strong>
+<p><strong class="badge badge-primary">Tags: </strong>
+
     <%= @article.tags %>
+    
 </p>
 
 <%= pluralize(@article.likes_count, 'person')%> liked this article
