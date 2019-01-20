@@ -1,11 +1,16 @@
 class ArticlesController < ApplicationController
-  before_action :find_article, only: [:show, :edit, :update, :destroy]
+  before_action :find_article, only: [:show, :edit, :update, :destroy, :toggle_visibility]
   before_action :authenticate_user!, except: [:show, :index]
   before_action :authorize_article, only: [:destroy, :edit, :update]
   
   def index
+    if current_user&.admin?
+        @articles = Article.all
+    else
+        @articles = Article.published
+    end
   	# binding.pry
-    @articles = Article.all.includes(:user).order(id: :desc)
+    @articles = @articles.includes(:user).order(id: :desc)
     @articles = @articles.where("? = any(tags)", params[:q]) if params[:q].present?
   end
 
@@ -83,10 +88,16 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def toggle_visibility
+    return redirect_to articles_path, error: 'Not found' unless current_user&.admin?
+    @article.toggle!(:published)
+    redirect_to articles_path, notice: 'Your article\'s visibility has been changed'
+  end
+
   private
 
   def authorize_article
-    if current_user != @article.user && !current_user.admin?
+    if current_user != @article.user && !current_user&.admin?
       flash[:alert] = "You are not allowed to be here"
       redirect_to articles_path
       return false
@@ -99,7 +110,11 @@ class ArticlesController < ApplicationController
   end
 
   def find_article
-    @article = Article.find(params[:id])
+     @article = if current_user&.admin?
+                  Article.find(params[:id])
+                else
+                  Article.published.find(params[:id])
+                end
   end
 
 end

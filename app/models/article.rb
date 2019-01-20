@@ -7,16 +7,22 @@ class Article < ApplicationRecord
   has_many :likes
   has_many :users, through: :likes 
 
-    def tags=(value)
-      value = sanitize_tags(value) if value.is_a?(String)
-      super(value)
-    end
+  scope :published, -> {where(published: true)}
 
-    def css_class
+  def tags=(value)
+    value = sanitize_tags(value) if value.is_a?(String)
+    super(value)
+  end
+
+  def css_class
+    if published?
       'normal'
+    else
+      'unpublished'
     end
+  end
 
-private
+  private
 
     def sanitize_tags(text)
 		  text.downcase.split.uniq
