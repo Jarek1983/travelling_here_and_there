@@ -34,15 +34,16 @@
 <%= pluralize(@article.likes_count, 'person')%> liked this article
 
 <% if @like.persisted? %>
+
   <i class="fa fa-thumbs-down"></i>
 
-<%= link_to "Unlike", article_like_path(@article, @like), method: :delete %>
+  <%= link_to "Unlike", article_like_path(@article, @like), method: :delete %>
 
 <% else %>
 
   <i class="fa fa-thumbs-up"></i>
 
-<%= link_to "Like", article_likes_path(@article), method: :post %>
+  <%= link_to "Like", article_likes_path(@article), method: :post %>
 
 <% end %>
 
@@ -52,30 +53,41 @@
   
 <% else %>
 
-<h2>Comments</h2>
+  <h2>Comments</h2>
 
-<button onclick="show_hide()">Click</button>
+    <button onclick="show_hide()">Click</button>
   
-  <div id="hide">
+    <div id="hide">
 
-<%= render @article.comments.includes(:user) %>
+      <%= render @article.comments.includes(:user) %>
 
-<%= render '/comments/form' %>
+      <%= render '/comments/form' %>
+
+<% end %>
 
   <div>
 
-<%= link_to 'Back', articles_path %>
+      <%= link_to 'Back', articles_path %>
 
-<% if @article.user == current_user && current_user&.admin? %> 
+    <% if @article.user == current_user && current_user&.admin? %> 
 
-<%= link_to 'Edit', edit_article_path(@article) %>
+      <%= link_to 'Edit', edit_article_path(@article) %>
 
-<% end %>
+    <% end %>
 
-<% end %>
 
-<% if @article.user == current_user && current_user&.admin? %> 
-<%= link_to 'Delete', article_path(@article), method: :delete, 
-            data: {confirm: 'Are you sure?'} %>
+    <% if @article.user == current_user && current_user&.admin? %> 
 
-  <% end %>
+      <%= link_to 'Delete', article_path(@article), method: :delete, 
+                data: {confirm: 'Are you sure?'} %>
+
+    <% end %>
+
+    <% if current_user&.admin? %>
+
+      <%= link_to @article.published? ? "Unpublish" : "Publish", toggle_visibility_article_path(@article) %>
+
+    <% end %>
+
+  </div>
+
