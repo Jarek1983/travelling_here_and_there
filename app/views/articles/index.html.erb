@@ -2,7 +2,7 @@
 
   <h4>Most commented article is <%= link_to @most_commented.title, article_path(@most_commented) %></h4>
 
-    <%= link_to 'New Article', new_article_path, class: "btn btn-primary" %>
+    <%= link_to 'New Article', new_article_path, class: "btn btn-primary" %> <hr/>
 
     <%= form_tag articles_path, method: :get do %>
 

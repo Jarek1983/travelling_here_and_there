@@ -22,8 +22,8 @@
             <%= alert %>
         </div>
     <% else %>
-      <%= link_to 'Sing in', new_user_session_path%>
-      <%= link_to 'Sing up', new_user_registration_path%>
+      <%= link_to 'Sing in', new_user_session_path, class: "btn btn-info"%>
+      <%= link_to 'Sing up', new_user_registration_path, class: "btn btn-primary"%>
     <% end %> 
 
     <% if user_signed_in? %>
