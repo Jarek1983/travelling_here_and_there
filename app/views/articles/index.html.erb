@@ -38,7 +38,7 @@
             <tr class="<%= article.css_class %>"> 
           
             <td><%= article.title %> </td>
-            <td><%= article.text %> </td>
+            <td><%= truncate(article.text, length: 25) %> </td>
             <td> 
               <% article.tags.each do |x| %>
                 <%= link_to x, articles_path(q: x), class: "badge badge-dark" %>
