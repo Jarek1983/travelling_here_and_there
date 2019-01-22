@@ -38,10 +38,13 @@
 
         </p>
 
-        <p><strong class="badge badge-primary">Tags: </strong>
+        <p><strong>Tags:</strong>
 
-            <%= @article.tags %>
-            
+          <% @article.tags.each do |t| %>
+          <%=link_to t, articles_path(q: t), class: "badge badge-dark"%>
+    
+        <% end %>
+  
         </p>
 
         <%= pluralize(@article.likes_count, 'person')%> lubi ten artykuł
@@ -68,7 +71,7 @@
 
           <h2>Komentarze</h2>
 
-            <button onclick="show_hide()">Pokaż/Ukryj</button>
+            <button onclick="show_hide()">Pokaż/Ukryj</button><hr>
           
             <div id="hide">
 

@@ -9,7 +9,7 @@
           <%= form_tag articles_path, method: :get do %>
 
             <div class="input-group">
-              <%= text_field_tag :q, params[:q], class: "form-control" %>
+              <%= text_field_tag :q, "", class: "form-control" %>
 
                 <span class="input-group-btn">
                   <%= submit_tag "Wyszukaj", class: "btn btn-default" %>
