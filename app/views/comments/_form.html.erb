@@ -5,7 +5,7 @@
  <%= form_for [@article, @comment], url: article_comments_path(@article, @comment) do |f| %>
 
   <div class="form-group">
-    <%= f.label :body %>
+    <%= f.label :komentarz %>
     <%= f.text_area :body, class: 'form-control' %>
   </div>
 
