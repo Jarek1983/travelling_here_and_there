@@ -14,6 +14,16 @@
 
  @import "bootstrap";
  @import "font-awesome";
+ @import "navigation";
+ @import "footer";
+
+
+ body {
+    background-color: #F8F8FF;
+    color: #2F4F4F;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+ }
 
 .sponsored {
 	background: #DDDDDD;

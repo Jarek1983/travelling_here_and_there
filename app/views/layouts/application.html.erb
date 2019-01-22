@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog2</title>
+    <title>Blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,32 +9,34 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
+ <body>
 
-     <% if notice %> 
-        <div class="alert alert-info">
-            <%= notice %>
-        </div>
-    <% end %> 
-
-    <% if alert %> 
-        <div class="alert alert-danger">
-            <%= alert %>
-        </div>
-    <% else %>
-      <%= link_to 'Sing in', new_user_session_path, class: "btn btn-info"%>
-      <%= link_to 'Sing up', new_user_registration_path, class: "btn btn-primary"%>
-    <% end %> 
-
-    <% if user_signed_in? %>
-      <p>Hello <%= current_user.email %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-      </p>
-    <% end %>
+    <%= render 'shared/navigation' %>
 
     <div class="container">
-      <%= yield %>
+      
+        <% if notice %>
+          <div class="show_notice">
+            <%= notice %>
+          </div>
+        <% end %>
+
+        <% if alert %>
+          <div class="show_alert">
+            <%= alert %>
+          </div>
+        <% end %>
+        
+        <%= yield %>
+ 
     </div>
+    
+      <div class="row" style="padding-top: 20px;">
+
+        <%= render 'shared/footer' %>
+
+      </div>
+
   </body>
 
 </html>
