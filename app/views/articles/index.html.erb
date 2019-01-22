@@ -1,83 +1,86 @@
-<h1>My Articles</h1>
+<div class="row" style="padding-top: 10px;">
+  <div class="col"> </div>
+    <div class="col-md-12">
 
-  <h4>Most commented article is <%= link_to @most_commented.title, article_path(@most_commented) %></h4>
+      <h1>My Articles</h1>
 
-    <%= link_to 'New Article', new_article_path, class: "btn btn-primary" %> <hr/>
+        <h4>Najpolularniejszym artykułem jest <%= link_to @most_commented.title, article_path(@most_commented) %></h4>
 
-    <%= form_tag articles_path, method: :get do %>
+          <%= link_to 'Nowy artykuł', new_article_path, class: "btn btn-primary" %> <hr/>
 
-      <div class="input-group">
-        <%= text_field_tag :q, params[:q], class: "form-control" %>
+          <%= form_tag articles_path, method: :get do %>
 
-          <span class="input-group-btn">
-            <%= submit_tag "Search", class: "btn btn-default" %>
-         </span>
+            <div class="input-group">
+              <%= text_field_tag :q, params[:q], class: "form-control" %>
 
-      </div>
-    <% end %>
+                <span class="input-group-btn">
+                  <%= submit_tag "Wyszukaj", class: "btn btn-default" %>
+               </span>
 
-      <table class="table">
+            </div>
 
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Text</th>
-            <th>Tags</th>
-            <th>Author</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th>Comments</th>
-          </tr>	
-        </thead>
-        <tbody>
+          <% end %>
 
-          <% @articles.each do |article| %>
-            
-            <tr class="<%= article.css_class %>"> 
-          
-            <td><%= article.title %> </td>
-            <td><%= truncate(article.text, length: 25) %> </td>
-            <td> 
-              <% article.tags.each do |x| %>
-                <%= link_to x, articles_path(q: x), class: "badge badge-dark" %>
-                <!-- x - pojedyńczy tag, article_path - parametry np q:, params[x] -->
-              <% end %> 
-            </td> 
-            <td><%= article.user.email %> </td>
+            <table class="table">
 
-            <td><%= link_to "Summary", article_path(article), class: "btn btn-info summary", id: "summary-#{article.id}" %></td>
-   
-            <td><%= link_to 'Show', article_path(article), class: "btn btn-primary" %></td> 
+              <thead>
+                <tr>
+                  <th>Tytuł</th>
+                  <th>Tekst</th>
+                  <th>Tags</th>
+                  <th>Autor</th>
+                  <th>Statystyki</th>
+                  <th colspan="3">Opcje</th>
+                </tr>	
+              </thead>
+              <tbody>
 
-              <% if article.user == current_user || current_user&.admin? %> 
-
-            <td>
-              <%= link_to 'Edit', edit_article_path(article), class: "btn btn-info" %>
-
-              <% end %>
-            </td> 
-
-            <td>
-              
-              <% if article.user == current_user || current_user&.admin? %> 
-              <%= link_to 'Delete', article_path(article), method: :delete, 
-            data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
-
-            </td>
-
-              <% end %>
+                <% @articles.each do |article| %>
+                  
+                  <tr class="<%= article.css_class %>"> 
                 
-            </td> 
+                  <td><%= article.title %> </td>
+                  <td><%= truncate(article.text, length: 25) %> </td>
+                  <td> 
+                    <% article.tags.each do |x| %>
+                      <%= link_to x, articles_path(q: x), class: "badge badge-dark" %>
+                      <!-- x - pojedyńczy tag, article_path - parametry np q:, params[x] -->
+                    <% end %> 
+                  </td> 
+                  <td><%= article.user.email %> </td>
 
-              <td><%= article.comments.count %> </td>
+                  <td><%= link_to "Summary", article_path(article), class: "btn btn-info summary", id: "summary-#{article.id}" %></td>
+         
+                  <td><%= link_to 'Pokaż', article_path(article), class: "btn btn-primary" %></td> 
 
-           </tr>
-         <% end %>
-        </tbody>
-      </table>
+                    <% if article.user == current_user || current_user&.admin? %> 
 
-Articles: <%= @articles.count %>
-<%= paginate @articles, theme: 'twitter-bootstrap-4' %>
+                  <td>
+                    <%= link_to 'Edytuj', edit_article_path(article), class: "btn btn-info" %>
+
+                    <% end %>
+                  </td> 
+
+                  <td>
+                    
+                    <% if article.user == current_user || current_user&.admin? %> 
+                    <%= link_to 'Usuń', article_path(article), method: :delete, 
+                  data: {confirm: 'Czy na pewno usunąć?'}, class: "btn btn-danger" %>
+
+                  </td>
+
+                    <% end %>
+                      
+                  </td> 
+
+                 </tr>
+               <% end %>
+              </tbody>
+            </table>
+
+      <%= paginate @articles, theme: 'twitter-bootstrap-4' %>
+
+    </div>
+  <div class="col"> </div>
+</div>
 

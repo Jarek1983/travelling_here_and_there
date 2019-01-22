@@ -1,21 +1,21 @@
  
 <p>
-  <strong>Body: </strong>
+  <strong>Komentarz: </strong>
     <%= simple_format(comment.body) %>
 </p>
 
 <p>
-  <strong>User: </strong>
+  <strong>Autor: </strong>
     <%= comment.user.email %>
 </p>
 
 <p>
-  <strong>Time: </strong>
+  <strong>Utworzono: </strong>
   <%= comment.created_at %>
 </p>
 
-<%= link_to 'Destroy', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete, data: {confirm: 'Are you Certain?'} %>
-<%= link_to 'Edit', edit_article_comment_path(article_id: comment.article.id, id: comment.id) %>
+<%= link_to 'Usuń', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete, data: {confirm: 'Are you Certain?'}, class: "btn btn-danger" %>
+<%= link_to 'Edytuj', edit_article_comment_path(article_id: comment.article.id, id: comment.id), class: "btn btn-info" %>
 
 <hr/>
 
