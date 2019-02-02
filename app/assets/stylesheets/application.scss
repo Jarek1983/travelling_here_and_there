@@ -25,6 +25,17 @@
 	font-size: 16px;
  }
 
+#flex {
+	background-color: #F8F8FF;
+	color: #2F4F4F;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+
 .sponsored {
 	background: #DDDDDD;
 }
