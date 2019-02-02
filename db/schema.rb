@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_20_104457) do
+ActiveRecord::Schema.define(version: 2019_02_02_124004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(version: 2019_01_20_104457) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "grades", force: :cascade do |t|
+    t.integer "number"
+    t.bigint "user_id"
+    t.bigint "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_grades_on_comment_id"
+    t.index ["user_id"], name: "index_grades_on_user_id"
+  end
+
   create_table "likes", force: :cascade do |t|
     t.bigint "article_id", null: false
     t.bigint "user_id", null: false
@@ -75,6 +85,8 @@ ActiveRecord::Schema.define(version: 2019_01_20_104457) do
   add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
+  add_foreign_key "grades", "comments"
+  add_foreign_key "grades", "users"
   add_foreign_key "likes", "articles"
   add_foreign_key "likes", "users"
 end
