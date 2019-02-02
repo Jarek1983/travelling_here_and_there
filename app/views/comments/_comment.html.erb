@@ -1,8 +1,32 @@
+
  
 <p>
   <strong>Komentarz: </strong>
     <%= simple_format(comment.body) %>
 </p>
+
+<div>
+	  <% if comment.grades.exists? { |grade| grade.user && current_user} %>
+	    <%= link_to 'delete your voting', article_comment_grade_path(@article, comment), method: :delete %>
+
+	  <% else %>
+
+	    <p>
+	      <%= form_for [comment, Grade.new], url: article_comment_grades_path(@article, comment) do |f| %>
+	       <p>
+	         <%= f.label :number, "vote:" %>
+	         <%= f.collection_radio_buttons :number, [[1, '+'] ,[-1, '-']], :first, :last %>
+	       </p>
+	       <p>
+	         <%= f.submit %>
+	       </p>
+	      <% end %>
+	    </p>
+
+	  <% end %>
+
+	    </p>
+</div>
 
 <p>
   <strong>Autor: </strong>

@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   resources :articles do
     get 'toggle_visibility', on: :member
-    resources :comments
+    resources :comments do
+      resources :grades
+      end
     resources :likes, only: [:create, :destroy]
   end
     
