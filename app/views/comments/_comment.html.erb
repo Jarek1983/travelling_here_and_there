@@ -3,8 +3,6 @@
     <%= simple_format(comment.body) %>
 </p>
 
-Comment rate: <%= comment.grade_number %>
-
 <div>
 	  <% if grade = comment.grades.where(user:current_user).first %>
 	    <%= link_to 'You can vote', article_comment_grade_path(article_id: @article, comment_id: comment, id: grade), method: :delete %>
@@ -17,10 +15,13 @@ Comment rate: <%= comment.grade_number %>
 	         <%= f.label :number, "vote:" %>
 	         <%= f.collection_radio_buttons :number, [[1, '+'] ,[-1, '-']], :first, :last %>
 	       </p>
+
 	       <p>
 	         <%= f.submit %>
 	       </p>
+
 	      <% end %>
+
 	    </p>
 
 	  <% end %>

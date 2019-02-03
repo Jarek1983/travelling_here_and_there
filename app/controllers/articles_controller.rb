@@ -5,11 +5,11 @@ class ArticlesController < ApplicationController
   
   def index
     if current_user&.admin?
-        @articles = Article.all
+      @articles = Article.all
     else
-        @articles = Article.published
+      @articles = Article.published
     end
-  	# binding.pry
+    # binding.pry
     @most_commented = @articles.most_commented
     @articles = @articles.includes(:user).order(id: :desc).page(params[:page]).per(5)
     @articles = @articles.where("? = any(tags)", params[:q]) if params[:q].present?
@@ -20,10 +20,10 @@ class ArticlesController < ApplicationController
   end
 
   def create
-  	# binding.pry https://gist.github.com/lfender6445/9919357
-  	# https://github.com/rweng/pry-rails
-  	# article_params = params.require(:article).permit(:title, :text) #permit stosujemy tylko wtedy, gdy modyfikujemy rekord
-  	@article = Article.new(article_params)
+    # binding.pry https://gist.github.com/lfender6445/9919357
+    # https://github.com/rweng/pry-rails
+    # article_params = params.require(:article).permit(:title, :text) #permit stosujemy tylko wtedy, gdy modyfikujemy rekord
+    @article = Article.new(article_params)
     @article.user = current_user
     # @article.user_id = current_user.id
       if @article.save
@@ -41,24 +41,23 @@ class ArticlesController < ApplicationController
     @like = Like.find_or_initialize_by(article: @article, user: current_user)
     # @article = Article.find(params[:id])
     # find_article
-    respond_to do |format|
+      respond_to do |format|
       format.html do
-        @article.increment!(:views_count)
-        render
+      @article.increment!(:views_count)
+      render
       end
-
-      format.json do 
+        format.json do 
         sleep(rand((20.0)/10))
         render json: {
-          id: @article.id,
-          title: @article.title,
-          text: @article.text,
-          views_count: @article.views_count,
-          likes_count: @article.likes.count,
-          comments_count: @article.comments.count
+        id: @article.id,
+        title: @article.title,
+        text: @article.text,
+        views_count: @article.views_count,
+        likes_count: @article.likes.count,
+        comments_count: @article.comments.count
         }
+        end
       end
-    end
   end
 
   def edit
@@ -69,17 +68,17 @@ class ArticlesController < ApplicationController
   end
 
   def update
-  	# article_params = params.require(:article).permit(:title, :text)
+    # article_params = params.require(:article).permit(:title, :text)
     # @article = Article.find(params[:id])
     # find_article
     return unless authorize_article
 
-	  if  @article.update(article_params)
+    if  @article.update(article_params)
       flash[:notice] = "You edit article"
-	    redirect_to article_path(@article)
-	  else
-		  render 'edit'
-	  end
+      redirect_to article_path(@article)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -98,13 +97,13 @@ class ArticlesController < ApplicationController
     redirect_to articles_path, notice: 'Your article\'s visibility has been changed'
   end
 
-  private
+private
 
   def authorize_article
     if current_user != @article.user && !current_user&.admin?
-      flash[:alert] = "You are not allowed to be here"
-      redirect_to articles_path
-      return false
+    flash[:alert] = "You are not allowed to be here"
+    redirect_to articles_path
+    return false
     end
     true
   end
@@ -114,11 +113,11 @@ class ArticlesController < ApplicationController
   end
 
   def find_article
-     @article = if current_user&.admin?
-                  Article.find(params[:id])
-                else
-                  Article.published.find(params[:id])
-                end
+    @article = if current_user&.admin?
+      Article.find(params[:id])
+    else
+      Article.published.find(params[:id])
+    end
   end
 
 end
