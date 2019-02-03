@@ -1,7 +1,7 @@
 class Grade < ApplicationRecord
   belongs_to :user
-  belongs_to :comments
+  belongs_to :comment
 
-  validates :number, presence: true
+  validates :number, uniqueness: {scope: :comment, message: 'already voting'} #zasięg dla komentarzy
 
 end

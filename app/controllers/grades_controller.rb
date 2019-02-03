@@ -1,15 +1,7 @@
 class GradesController < ApplicationController
 
-  before_action :authenticate_user!, only: [:create ,:edit, :update, :destroy, :vote_for]
-  before_action :set_grade, only: [:show, :edit, :update, :destroy, :vote_for]
-
-	def index
-	  @grades = Grade.all.order("plusminus desc")  
-	end
-
-	def show
-	  @comment = Comment.new(number: @grade) 
-	end
+  # before_action :authenticate_user!, only: [:create ,:edit, :update, :destroy, :vote_for]
+  # before_action :set_grade, only: [:show, :edit, :update, :destroy, :vote_for]
 
 	def new
 	  @grade = Grade.new
@@ -21,51 +13,50 @@ class GradesController < ApplicationController
 
 	def create
 	  @grade = Grade.new(grade_params)
+    @grade.comment_id = params[:comment_id] #trzeba się odwołać do id komentarza
+    @grade.user = current_user
+    # binding.pry
 	    if @grade.save
-	    flash[:notice] = "You create grade"
+        redirect_to article_path(id: params[:article_id])
 	    else
-	      render 'articles/show'
+	      redirect_to article_path(id: params[:article_id])
 	    end
 	end
 
-    def update
-
-      if @grade.update(grade_params)
-        flash[:notice] = "Grade was successfully updated."
-        redirect_to article_path(@article)
-      else
-        render 'edit'
-      end
-    end
-
     def destroy
        @grade = Grade.find(params[:id])
-       @grade.destroy
-       flash[:alert] = "You delete comment"
-       redirect_to article_path(@article)
+       if @grade.present?
+        @grade.destroy
+        redirect_to article_path(id: params[:article_id])
+       end
     end
 
-  	def vote_plus
-      @grade = Grade.find(params[:id])
-      current_user.vote_plus(@grade)
-      flash[:notice] = "update vote"
-	  redirect_to article_path(@article)
+  	def voting
+        @grade = Grade.find(params[:id])
+        
+
     end
 
     def vote_minus
-      @grade = Grade.find(params[:id])
-      current_user.vote_minus(@grade)
-      flash[:notice] = "update vote"
-	  redirect_to article_path(@article)
+        @grade = Grade.find(params[:id])
+        current_user.vote_minus(@grade)
     end
 
 private
 
     def set_grade
-       @grade = Grade.find(params[:id])
+      @grade = Grade.find(params[:id])
+    end
+
+    def find_comment
+      @comment= Comment.find(params[:comment_id])
+    end
+
+    def find_article
+      @article = Article.find(params[:article_id])
     end
 
     def grade_params
-       params.require(:grade).permit(:number)
+        params.require(:grade).permit(:number, :comment_id)
     end
 end

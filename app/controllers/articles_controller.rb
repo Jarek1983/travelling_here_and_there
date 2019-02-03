@@ -35,7 +35,9 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @articles = Article.find_by_id(session[:article_id])
     @comment = Comment.new
+    @grade = Grade.new
     @like = Like.find_or_initialize_by(article: @article, user: current_user)
     # @article = Article.find(params[:id])
     # find_article
@@ -62,6 +64,7 @@ class ArticlesController < ApplicationController
   def edit
     # @article = Article.find(params[:id])
     # if @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    session[:article_id] = @article.id
     return unless authorize_article
   end
 
