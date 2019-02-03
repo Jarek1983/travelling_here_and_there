@@ -9,6 +9,7 @@ class Article < ApplicationRecord
 
   has_many :likes
   has_many :users, through: :likes 
+  has_many :users, through: :grades
 
   scope :published, -> {where(published: true)} 
   scope :most_commented, -> {order(comments_count: :desc).first}

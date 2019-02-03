@@ -1,13 +1,13 @@
-
- 
 <p>
   <strong>Komentarz: </strong>
     <%= simple_format(comment.body) %>
 </p>
 
+Comment rate: <%= comment.grade_number %>
+
 <div>
-	  <% if comment.grades.exists? { |grade| grade.user && current_user} %>
-	    <%= link_to 'delete your voting', article_comment_grade_path(@article, comment), method: :delete %>
+	  <% if grade = comment.grades.where(user:current_user).first %>
+	    <%= link_to 'You can vote', article_comment_grade_path(article_id: @article, comment_id: comment, id: grade), method: :delete %>
 
 	  <% else %>
 
@@ -26,6 +26,10 @@
 	  <% end %>
 
 	    </p>
+
+	  <p> ocena
+
+	  </p>
 </div>
 
 <p>
