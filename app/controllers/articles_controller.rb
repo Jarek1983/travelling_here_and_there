@@ -114,10 +114,10 @@ private
 
   def find_article
     @article = if current_user&.admin?
-      Article.find(params[:id])
-    else
-      Article.published.find(params[:id])
-    end
+    Article.find(params[:id])
+  else
+    Article.published.find(params[:id])
+  end
   end
 
 end
