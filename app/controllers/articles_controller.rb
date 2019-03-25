@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
     end
   	# binding.pry
     @most_commented = @articles.most_commented
-    @articles = @articles.includes(:user).order(id: :desc).page(params[:page]).per(5)
+    @articles = @articles.includes(:user).order(id: :desc).page(params[:page]).per(8)
     @articles = @articles.where("? = any(tags)", params[:q]) if params[:q].present?
   end
 
