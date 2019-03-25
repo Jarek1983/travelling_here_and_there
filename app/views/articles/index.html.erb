@@ -6,6 +6,8 @@
 
           <%= link_to 'Nowy artykuł', new_article_path, class: "btn btn-primary" %> <hr/>
 
+        <div class="search">
+
           <%= form_tag articles_path, method: :get do %>
 
             <div class="input-group">
@@ -18,6 +20,8 @@
             </div>
 
           <% end %>
+          
+        </div>
 
           <table>
 
@@ -76,7 +80,11 @@
               </tbody>
             </table>
 
-      <%= paginate @articles, theme: 'twitter-bootstrap-4' %>
+      <div class="paginate">
+
+        <%= paginate @articles, theme: 'twitter-bootstrap-4' %>
+
+      </div>
 
     </div>
   <div class="col"> </div>

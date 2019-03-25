@@ -16,6 +16,7 @@
  @import "font-awesome";
  @import "navigation";
  @import "footer";
+ @import "articles";
 
 #flex {
 	background-color: #F8F8FF;
@@ -51,8 +52,7 @@ td, th {
   text-align: left; 
 }
 
-@media 
-only screen and (max-width: 768px),
+@media only screen and (max-width: 768px),
 (min-device-width: 100px) and (max-device-width: 768px)  {
 
   /* Force table to not be like tables anymore */
@@ -67,14 +67,15 @@ only screen and (max-width: 768px),
     left: -9999px;
   }
   
-  tr { border: 1px solid #ccc; }
-  
+  tr {font-style: italic; }
+
   td { 
     /* Behave  like a "row" */
     border: none;
     border-bottom: 1px solid #eee; 
     position: relative;
     padding-left: 50%; 
+    font-size: 2rem;
   }
   
   td:before { 
@@ -82,7 +83,7 @@ only screen and (max-width: 768px),
     position: absolute;
     /* Top/left values mimic padding */
     top: 6px;
-    left: 6px;
+    left: 100px;
     width: 45%; 
     padding-right: 10px; 
     white-space: nowrap;
@@ -98,8 +99,6 @@ only screen and (max-width: 768px),
   td:nth-of-type(5):before { content: "Statystyki"; }
   td:nth-of-type(6):before { content: "Opcje"; }
 }
-
-
 
 .sponsored {
 	background: #DDDDDD;
