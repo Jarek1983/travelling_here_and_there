@@ -30,12 +30,25 @@
 	width: 100%;
 }
 
+.container_2 {
+  margin: 10px;
+}
+
+@media only screen and (max-width: 768px),
+(min-device-width: 100px) and (max-device-width: 768px)  {
+
+  .container_2 { 
+    margin-left: -20px; 
+    margin-right: -30px;
+    }
+  }
+
 /* 
 Generic Styling, for Desktops/Laptops 
 */
 table { 
   width: 100%; 
-  border-collapse: collapse; 
+
 }
 /* Zebra striping */
 tr:nth-of-type(odd) { 

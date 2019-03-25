@@ -1,12 +1,12 @@
-<div class="row" style="padding-top: 200px;">
+<div style="padding-top: 180px;">
   <div class="col"> </div>
     <div class="col-12">
-
-        <h4>Najczęściej komentowanym artykułem jest <%= link_to @most_commented.title, article_path(@most_commented) %></h4>
-
+      
+        <h4 style="margin-left: 20px;">Najczęściej komentowanym artykułem jest <%= link_to @most_commented.title, article_path(@most_commented) %></h4>
+        <div style="margin-left: 20px;">
           <%= link_to 'Nowy artykuł', new_article_path, class: "btn btn-primary" %> <hr/>
-
-        <div class="search">
+        </div>
+        <div class="search" style="margin-left: 20px;">
 
           <%= form_tag articles_path, method: :get do %>
 
