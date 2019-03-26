@@ -19,36 +19,32 @@
  @import "articles";
 
 #flex {
-	background-color: #F8F8FF;
-	color: #2F4F4F;
-	font-family: 'Lato', sans-serif;
-	font-size: 16px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	min-height: 100vh;
-	width: 100%;
+  background-color: #F8F8FF;
+  color: #2F4F4F;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
 }
 
-.container_2 {
-  margin: 10px;
+.sponsored {
+  background: #DDDDDD;
 }
 
-@media only screen and (max-width: 768px),
-(min-device-width: 100px) and (max-device-width: 768px)  {
-
-  .container_2 { 
-    margin-left: -20px; 
-    margin-right: -30px;
-    }
-  }
+.unpublished {
+  opacity: 0.5;
+  background: #CCCCCC;
+}
 
 /* 
 Generic Styling, for Desktops/Laptops 
 */
 table { 
   width: 100%; 
-
+  border-collapse: collapse; 
 }
 /* Zebra striping */
 tr:nth-of-type(odd) { 
@@ -61,12 +57,28 @@ th {
 }
 td, th { 
   padding: 6px; 
-  border: 1px solid #ccc; 
-  text-align: left; 
+  text-align: center; 
 }
 
-@media only screen and (max-width: 768px),
-(min-device-width: 100px) and (max-device-width: 768px)  {
+@media only screen and (max-width: 1199px),
+(min-device-width: 992px) and (max-device-width: 1199px) {
+
+td, th, h4 { 
+  font-size: 1.5rem; 
+  }
+}
+
+
+@media only screen and (max-width: 991px),
+(min-device-width: 768px) and (max-device-width: 991px) {
+
+td, th, h4 { 
+  font-size: 2rem; 
+  }
+}
+
+@media only screen and (max-width: 767px),
+(min-device-width: 100px) and (max-device-width: 767px)  {
 
   /* Force table to not be like tables anymore */
   table, thead, tbody, th, td, tr { 
@@ -80,7 +92,13 @@ td, th {
     left: -9999px;
   }
   
-  tr {font-style: italic; }
+  tr {
+    font-style: italic; 
+  }
+
+  th, h4 { 
+    font-size: 2.5rem; 
+  }
 
   td { 
     /* Behave  like a "row" */
@@ -88,7 +106,7 @@ td, th {
     border-bottom: 1px solid #eee; 
     position: relative;
     padding-left: 50%; 
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   
   td:before { 
@@ -113,11 +131,50 @@ td, th {
   td:nth-of-type(6):before { content: "Opcje"; }
 }
 
-.sponsored {
-	background: #DDDDDD;
-}
+/*buttons */
+    @media only screen and (min-width: 1200px) {
+      
+      .btn {
+        font-size: 1rem;
+        margin: auto;
+        width: auto;
+      }
+    }
 
-.unpublished {
-	opacity: 0.5;
-	background: #CCCCCC;
-}
+    @media only screen and (max-width: 1199px),
+    (min-device-width: 992px) and (max-device-width: 1199px) {
+
+      .btn {
+        font-size: 1.2rem;
+        margin: auto;
+        width: auto;
+      }
+    }
+
+    @media only screen and (max-width: 991px),
+    (min-device-width: 768px) and (max-device-width: 991px) {
+
+      .btn {
+        font-size: 2rem;
+        margin: auto;
+        width: 100%;
+      }
+      .new_article {
+        width: 25%;
+      }
+    }
+
+    @media only screen and (max-width: 767px),
+    (min-device-width: 100px) and (max-device-width: 767px) {
+
+      .btn {
+        font-size: 2.5rem;
+        margin: auto;
+        width: 50%;
+      }
+      .new_article {
+        width: 40%;
+      }
+    }
+
+
