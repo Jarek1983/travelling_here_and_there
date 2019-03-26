@@ -134,27 +134,46 @@ td, th, h4 {
 /*buttons */
     @media only screen and (min-width: 1200px) {
       
-      .btn {
+      .btn-new {
         font-size: 1rem;
         margin: auto;
         width: auto;
+      }
+      .new_form {
+        width: 75%;
+        line-height: 200%;
+      }
+      .new_submit {
+        font-size: 1rem;
+        padding-top: 5%;
       }
     }
 
     @media only screen and (max-width: 1199px),
     (min-device-width: 992px) and (max-device-width: 1199px) {
 
-      .btn {
+      .btn-new {
         font-size: 1.2rem;
         margin: auto;
         width: auto;
+      }
+      .new_form {
+        width: 50%;
+        line-height: 300%;
+      }
+      .form2 {
+        height: 50px;
+      }
+      .new_submit {
+        font-size: 1.5rem;
+        padding-top: 5%;
       }
     }
 
     @media only screen and (max-width: 991px),
     (min-device-width: 768px) and (max-device-width: 991px) {
 
-      .btn {
+      .btn-new {
         font-size: 2rem;
         margin: auto;
         width: 100%;
@@ -162,18 +181,41 @@ td, th, h4 {
       .new_article {
         width: 25%;
       }
+      .new_form {
+        width: 100%;
+        line-height: 100%;
+      }
+      .form2 {
+        height: 60px;
+      }
+      .new_submit {
+        font-size: 2.0rem;
+        line-height: 100%;
+        padding-top: 8%;
+      }
     }
 
     @media only screen and (max-width: 767px),
     (min-device-width: 100px) and (max-device-width: 767px) {
 
-      .btn {
+      .btn-new{
         font-size: 2.5rem;
         margin: auto;
         width: 50%;
       }
       .new_article {
         width: 40%;
+      }
+      .new_form {
+        width: 90%;
+      }
+      .form2 {
+        height: 70px;
+      }
+      .new_submit {
+        font-size: 2.0rem;
+        line-height: 100%;
+        padding-top: 15%;
       }
     }
 
