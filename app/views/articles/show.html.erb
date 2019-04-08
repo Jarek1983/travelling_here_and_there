@@ -26,6 +26,7 @@
           
         </p>
 
+
         <% if sponsored_article? @article %>
 
           <h3>Artykuł sponsorowany przez firmę <%= @article.company.name %></h3>
@@ -44,7 +45,7 @@
           <%=link_to t, articles_path(q: t), class: "badge badge-dark"%>
     
         <% end %>
-  
+
         </p>
 
         <%= pluralize(@article.likes_count, 'person')%> lubi ten artykuł
@@ -63,6 +64,7 @@
 
         <% end %>
 
+
         <% if sponsored_article? @article %>
           
           <p>Komentarze zablokowane</p>
@@ -74,14 +76,15 @@
             <button onclick="show_hide()">Pokaż/Ukryj</button><hr>
           
             <div id="hide">
-
               <%= render @article.comments.includes(:user) %>
 
               <%= render '/comments/form' %>
 
+            </div>
+
         <% end %>
 
-          <div>
+            <div>
 
               <%= link_to 'Powrót', articles_path, class: "btn btn-primary" %>
 

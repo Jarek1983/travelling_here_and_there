@@ -11,11 +11,9 @@
 
  <body>
 
-  <div id="flex">
-
     <%= render 'shared/navigation' %>
 
-    <div class="container-fluid">
+    <div class="container" style="padding-bottom: 1rem;">
       
         <% if notice %>
           <div class="show_notice">
@@ -32,14 +30,8 @@
         <%= yield %>
  
     </div>
-    
-      <div class="row" style="padding-top: 20px;">
 
         <%= render 'shared/footer' %>
-
-      </div>
-
-    </div>  
 
   </body>
 
