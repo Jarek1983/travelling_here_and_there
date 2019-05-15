@@ -1,31 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top pr-5", style="background-color: #330033;">
 
-      <div class="navbar-brand" href="#" style="width:10rem;" >
-        <%=link_to (image_tag '01.jpg', style:"width:100%;"), root_path %>
+      <div class="navbar-brand mx-auto" href="#" style="width:12rem;" >
+        <%=link_to (image_tag '2.jpg', style:"width:100%;"), root_path %>
       </div>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item">
-          <%= link_to 'Strona Główna', root_path, class: 'nav-link' %>
-        </li>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to 'Świat', articles_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+           <%= link_to 'Polska', articles_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Youtube', articles_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'O mnie', articles_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Kontakt', articles_path, class: 'nav-link' %>
+          </li>
 
-        <li class="nav-item">
-          <%= link_to 'Miasta', articles_path, class: 'nav-link' %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to 'Kraje', articles_path, class: 'nav-link' %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to 'Kontakt', articles_path, class: 'nav-link' %>
-        </li>
-
-          <% if current_user && current_user.admin? %>
+              <% if current_user && current_user.admin? %>
 
           <li class="nav-item">
             <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: 'nav-link' %>
@@ -45,10 +46,27 @@
 
           <li class="nav-item">
               <%= link_to 'Utwórz konto', new_user_registration_path, class: 'nav-link'%>
-          </li>
-          
-            <% end %>
-      </ul>
+          </li> 
 
-    </div>
+          <% end %>
+          
+        </ul>
+
+        <div class="navbar-nav form-inline mt-2 mt-md-0">
+
+          <%= form_tag articles_path, method: :get do %>
+
+            <div class="mr-sm-2">
+              
+              <%= text_field_tag :q, "", class: "form-control form2" %>
+
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+            </div>
+
+          <% end %>
+
+        </div>
+
+      </div>
 </nav>

@@ -30,7 +30,7 @@ for(i = 0; i < summaryElements.length; i++) {
     request.responseType = "json";
     request.addEventListener("load", function(){
       var summary = document.getElementById("summary-" + this.response.id);
-      summary.innerText = "Comments: " + this.response.comments_count + ", Views count: " + this.response.views_count + ", Likes: " + this.response.likes_count;
+      summary.innerText = "Komentarze: " + this.response.comments_count + ", Wyświetlenia: " + this.response.views_count + ", Polubienia: " + this.response.likes_count;
       })
     element.innerText = "Loading...";
     request.send();
