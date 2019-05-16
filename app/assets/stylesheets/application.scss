@@ -18,13 +18,22 @@
  @import "footer";
  @import "articles";
 
-html {
-  position: relative;
-  min-height: 100%;
-}
+html {height: 100%;}
 
 body {
-  margin-bottom: 60px;
+    width: 100%;
+    min-height:100%; 
+    position:relative; 
+    padding-bottom:[footer-height];
+}
+
+.form-control {
+  width: 80%;
+  height: 50px;
+  margin: auto;
+  border-radius: 10px;
+  background-color: #F5F5DC;
+  font-size: 1.2rem;
 }
 
 .sponsored {
@@ -38,23 +47,60 @@ body {
 
 
 
+
 @media only screen and (max-width: 1199px),
 (min-device-width: 992px) and (max-device-width: 1199px) {
 
-
+  .form-control {
+      width: 80%;
+      border-radius: 10px;
+      height: 80px !important;
+      font-size: 1.4rem;
+  }
 }
 
 
 @media only screen and (max-width: 991px),
 (min-device-width: 768px) and (max-device-width: 991px) {
 
+  body {
+      width: 110%;
+      min-height:110%; 
+      position:relative; 
+      padding-bottom:[footer-height] 
+  }
 
+  .form-control {
+      width: 400%;
+      margin: auto;
+      border-radius: 10px;
+      height: 80px !important;
+      font-size: 1.6rem;
+    }
 }
 
 @media only screen and (max-width: 767px),
 (min-device-width: 100px) and (max-device-width: 767px)  {
 
+  body {
+      width: 110%;
+      min-height:110%; 
+      position:relative; 
+      padding-bottom:[footer-height] 
+    }
+
+    .form-control {
+      width: 250%;
+      border-radius: 10px;
+      height: 120px !important;
+      font-size: 1.8rem;
+    }
 }
+
+
+
+
+
 
 /*buttons */
     @media only screen and (min-width: 1200px) {

@@ -1,11 +1,12 @@
-<div class="row" style="padding-top: 80px;">
-  <div class="col"> </div>
-    <div class="col-md-12">
+<section class="container-fluid pt-5 pb-5">
+	  <div class="row pt-5 pb-5">
+	      <div class="col-12 pt-5">
 
-		<h1>Nowy artykuł</h1>
+				<h2 class="pt-5">Nowy wpis</h2>
 
-		<%= render 'form' %>
+		   </div>
+	   </div>
 
-    </div>
-  <div class="col"> </div>
-</div>
+		<%= render 'form', article: @article %>
+
+</section>
