@@ -12,8 +12,6 @@
  <body>
 
     <%= render 'shared/navigation' %>
-
-    <div class="container" style="padding-bottom: 1rem;">
       
         <% if notice %>
           <div class="show_notice">
@@ -28,8 +26,7 @@
         <% end %>
         
         <%= yield %>
- 
-    </div>
+
 
         <%= render 'shared/footer' %>
 

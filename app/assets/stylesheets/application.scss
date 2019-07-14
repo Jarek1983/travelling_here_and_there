@@ -28,12 +28,12 @@ body {
 }
 
 .form-control {
-  width: 80%;
-  height: 50px;
-  margin: auto;
-  border-radius: 10px;
-  background-color: #F5F5DC;
-  font-size: 1.2rem;
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #F5F5DC;
+    font-size: 1.2rem;
 }
 
 .sponsored {
@@ -53,6 +53,7 @@ body {
 
   .form-control {
       width: 80%;
+      margin: auto;
       border-radius: 10px;
       height: 80px !important;
       font-size: 1.4rem;
@@ -62,13 +63,6 @@ body {
 
 @media only screen and (max-width: 991px),
 (min-device-width: 768px) and (max-device-width: 991px) {
-
-  body {
-      width: 110%;
-      min-height:110%; 
-      position:relative; 
-      padding-bottom:[footer-height] 
-  }
 
   .form-control {
       width: 400%;
@@ -82,12 +76,6 @@ body {
 @media only screen and (max-width: 767px),
 (min-device-width: 100px) and (max-device-width: 767px)  {
 
-  body {
-      width: 110%;
-      min-height:110%; 
-      position:relative; 
-      padding-bottom:[footer-height] 
-    }
 
     .form-control {
       width: 250%;

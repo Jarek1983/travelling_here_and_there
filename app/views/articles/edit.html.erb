@@ -1,13 +1,12 @@
-<div class="row" style="padding-top: 100px;">
-  <div class="col"> </div>
-    <div class="col-md-12">
+<section class="container-fluid pt-5 pb-5">
+	  <div class="row pt-5 pb-5">
+	      <div class="col-12 pt-5">
 
-		<h3>Edytuj</h3>
+				<h2 class="pt-5">Nowy wpis</h2>
 
-		<%= render 'form' %>
+		   </div>
+	   </div>
 
-		<%= link_to 'Powrót', articles_path, class: 'btn btn-info' %>
+		<%= render 'form', article: @article %>
 
-    </div>
-  <div class="col"> </div>
-</div>
+</section>

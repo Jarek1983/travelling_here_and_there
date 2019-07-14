@@ -1,12 +1,15 @@
-<%= render 'common/errors', model: @article %>
 
 
- <%= simple_form_for @article do |f| %>
-    <%= f.input :title, label: 'Miasto:' %>
-    <%= f.input :text, label: 'Wpisz tekst:' %>
-    <%= f.input :tags, label: 'Wskaż tags:' %> 
-    <%= f.input :image, label: "Zdjęcie" %>
-    <%= link_to 'Powrót', articles_path, class: 'btn btn-sd btn-info' %>
-    <%= f.submit "Zapisz", class: 'btn btn-success' %>
+	<%= render 'common/errors', model: @article %>
 
-<% end %>
+
+	 <%= simple_form_for @article do |f| %>
+	    <%= f.input :title, label: 'Miasto:' %>
+	    <%= f.input :text, label: 'Wpisz tekst:' %>
+	    <%= f.input :tags, label: 'Wskaż tags:' %> 
+	    <%= f.input :image, label: "Zdjęcie" %>
+	    <%= link_to 'Powrót', articles_path, class: 'btn btn-sd btn-info' %>
+	    <%= f.submit "Zapisz", class: 'btn btn-success' %>
+
+	<% end %>
+

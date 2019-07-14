@@ -1,115 +1,119 @@
-<div class="row" style="padding-top: 30px;">
-  <div class="col"> </div>
-    <div class="col-md-12">
+<section class="container-fluid pt-5">
+  <div class="row pt-5">
+      <div class="col-12 pt-5">
 
-        <p><strong>Tytuł:</strong>
-
+          <p class="pt-5">
+            <strong>Tytuł:</strong>
             <%= @article.title %>
+          </p>
 
-        </p>
+          <p>
+            <strong>Utworzono: </strong>
+            <%= @article.created_at.strftime('%A %-B %-d, %Y | %l:%M %p') %>
+          </p>
 
-        <p><strong>Utworzono: </strong>
-
-          <%= @article.created_at.strftime('%A %-B %-d, %Y | %l:%M %p') %>
-
-        </p>
-
-        <p><strong>Opis: </strong>
-
+          <p>
+            <strong>Opis: </strong>
             <%= @article.text %>
+          </p>
 
-        </p>
+          <p>
+            <%= image_tag(@article.image_url) if @article.image?%>
+          </p>
 
-        <p>
+          <p>
+            <%= image_tag(@article.image_url) if @article.image_second?%>
+          </p>
 
-          <%= image_tag(@article.image_url) if @article.image?%>
-          
-        </p>
-
-
-        <% if sponsored_article? @article %>
-
-          <h3>Artykuł sponsorowany przez firmę <%= @article.company.name %></h3>
-
-        <% end %>
-
-        <p><strong>Autor: </strong>
-
-            <%= @article.user.email %>
-
-        </p>
-
-        <p><strong>Tags:</strong>
-
-          <% @article.tags.each do |t| %>
-          <%=link_to t, articles_path(q: t), class: "badge badge-dark"%>
-    
-        <% end %>
-
-        </p>
-
-        <%= pluralize(@article.likes_count, 'person')%> lubi ten artykuł
-
-        <% if @like.persisted? %>
-
-          <i class="fa fa-thumbs-down"></i>
-
-          <%= link_to "Nie lubię", article_like_path(@article, @like), method: :delete, class: "btn btn-info" %>
-
-        <% else %>
-
-          <i class="fa fa-thumbs-up"></i>
-
-          <%= link_to "Lubię", article_likes_path(@article), method: :post, class: "btn btn-info" %>
-
-        <% end %>
+          <p>
+            <%= image_tag(@article.image_url) if @article.image_third?%>
+          </p>
 
 
-        <% if sponsored_article? @article %>
-          
-          <p>Komentarze zablokowane</p>
-          
-        <% else %>
+          <% if sponsored_article? @article %>
 
-          <h2>Komentarze</h2>
+            <h3>Artykuł sponsorowany przez firmę <%= @article.company.name %></h3>
 
-            <button onclick="show_hide()">Pokaż/Ukryj</button><hr>
-          
-            <div id="hide">
-              <%= render @article.comments.includes(:user) %>
+          <% end %>
 
-              <%= render '/comments/form' %>
+          <p><strong>Autor: </strong>
+
+              <%= @article.user.email %>
+
+          </p>
+
+          <p><strong>Tags:</strong>
+
+            <% @article.tags.each do |t| %>
+            <%=link_to t, articles_path(q: t), class: "badge badge-dark"%>
+      
+          <% end %>
+
+          </p>
+
+          <%= pluralize(@article.likes_count, 'person')%> lubi ten artykuł
+
+          <% if @like.persisted? %>
+
+            <i class="fa fa-thumbs-down"></i>
+
+            <%= link_to "Nie lubię", article_like_path(@article, @like), method: :delete, class: "btn btn-info" %>
+
+          <% else %>
+
+            <i class="fa fa-thumbs-up"></i>
+
+            <%= link_to "Lubię", article_likes_path(@article), method: :post, class: "btn btn-info" %>
+
+          <% end %>
+
+
+          <% if sponsored_article? @article %>
+            
+            <p>Komentarze zablokowane</p>
+            
+          <% else %>
+
+            <h2>Komentarze</h2>
+
+              <button onclick="show_hide()">Pokaż/Ukryj</button><hr>
+            
+              <div id="hide">
+                <%= render @article.comments.includes(:user) %>
+
+                <%= render '/comments/form' %>
+
+              </div>
+
+          <% end %>
+
+              <div>
+
+                <%= link_to 'Powrót', articles_path, class: "btn btn-primary" %>
+
+              <% if @article.user == current_user && current_user&.admin? %> 
+
+                <%= link_to 'Edytuj', edit_article_path(@article), class: "btn btn-info" %>
+
+              <% end %>
+
+
+              <% if @article.user == current_user && current_user&.admin? %> 
+
+                <%= link_to 'Usuń', article_path(@article), method: :delete, 
+                          data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+
+              <% end %>
+
+              <% if current_user&.admin? %>
+
+                <%= link_to @article.published? ? "Nie publikuj" : "Publikuj", toggle_visibility_article_path(@article), class: "btn btn-info" %>
+
+              <% end %>
 
             </div>
 
-        <% end %>
-
-            <div>
-
-              <%= link_to 'Powrót', articles_path, class: "btn btn-primary" %>
-
-            <% if @article.user == current_user && current_user&.admin? %> 
-
-              <%= link_to 'Edytuj', edit_article_path(@article), class: "btn btn-info" %>
-
-            <% end %>
-
-
-            <% if @article.user == current_user && current_user&.admin? %> 
-
-              <%= link_to 'Usuń', article_path(@article), method: :delete, 
-                        data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
-
-            <% end %>
-
-            <% if current_user&.admin? %>
-
-              <%= link_to @article.published? ? "Nie publikuj" : "Publikuj", toggle_visibility_article_path(@article), class: "btn btn-info" %>
-
-            <% end %>
-
-          </div>
-
-    </div>
-  <div class="col"> </div>
-</div>
+      </div>
+    <div class="col"> </div>
+  </div>
+</section>
