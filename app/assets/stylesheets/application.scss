@@ -17,6 +17,7 @@
  @import "navigation";
  @import "footer";
  @import "articles";
+ @import "login";
 
 html {height: 100%;}
 
@@ -28,10 +29,10 @@ body {
 }
 
 .form-control {
-    width: 80%;
+    width: 30%;
     height: 50px;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 8px;
     background-color: #F5F5DC;
     font-size: 1.2rem;
 }
@@ -46,16 +47,14 @@ body {
 }
 
 
-
-
 @media only screen and (max-width: 1199px),
 (min-device-width: 992px) and (max-device-width: 1199px) {
 
   .form-control {
-      width: 80%;
+      width: 40%;
+      height: 60px !important;
       margin: auto;
-      border-radius: 10px;
-      height: 80px !important;
+      border-radius: 8px;
       font-size: 1.4rem;
   }
 }
@@ -65,11 +64,11 @@ body {
 (min-device-width: 768px) and (max-device-width: 991px) {
 
   .form-control {
-      width: 400%;
+      width: 50%;
+      height: 60px !important;
       margin: auto;
-      border-radius: 10px;
-      height: 80px !important;
-      font-size: 1.6rem;
+      border-radius: 8px;
+      font-size: 1.2rem;
     }
 }
 
@@ -78,9 +77,9 @@ body {
 
 
     .form-control {
-      width: 250%;
+      width: 100%;
       border-radius: 10px;
-      height: 120px !important;
+      height: 100px !important;
       font-size: 1.8rem;
     }
 }
