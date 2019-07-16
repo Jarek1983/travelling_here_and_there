@@ -29,6 +29,11 @@ body {
     min-height: 100%; 
     position: relative; 
     padding-bottom: [footer-height];
+      background: linear-gradient(rgba(139,69,19,0.6),rgba(139,69,19,0.6)),url(images/photo3.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .form-control {
