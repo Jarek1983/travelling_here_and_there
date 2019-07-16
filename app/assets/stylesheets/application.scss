@@ -18,14 +18,15 @@
  @import "footer";
  @import "articles";
  @import "login";
+ @import "about";
 
 html {height: 100%;}
 
 body {
     width: 100%;
-    min-height:100%; 
-    position:relative; 
-    padding-bottom:[footer-height];
+    min-height: 100%; 
+    position: relative; 
+    padding-bottom: [footer-height];
 }
 
 .form-control {
