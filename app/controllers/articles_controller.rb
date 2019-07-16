@@ -110,14 +110,14 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title,:text, :tags, :image)
+    params.require(:article).permit(:title,:text, :tags, :image, :image_second, :image_third)
   end
 
   def find_article
      @article = if current_user&.admin?
-                  Article.find(params[:id])
+                  Article.friendly.find(params[:id])
                 else
-                  Article.published.find(params[:id])
+                  Article.published.friendly.find(params[:id])
                 end
   end
 

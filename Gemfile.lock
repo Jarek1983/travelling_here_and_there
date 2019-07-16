@@ -110,6 +110,8 @@ GEM
     ffi (1.11.1)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
+    friendly_id (5.2.5)
+      activerecord (>= 4.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
@@ -207,7 +209,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    regexp_parser (1.5.1)
+    regexp_parser (1.6.0)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -294,6 +296,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-rails
+  friendly_id (~> 5.2, >= 5.2.5)
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

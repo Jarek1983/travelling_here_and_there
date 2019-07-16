@@ -43,6 +43,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'cloudinary'
 gem 'simple_form'
 gem 'trix-rails', require: 'trix'
+gem 'friendly_id', '~> 5.2', '>= 5.2.5'
 
 
 group :development, :test do

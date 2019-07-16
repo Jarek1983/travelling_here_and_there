@@ -4,6 +4,9 @@ class Article < ApplicationRecord
   mount_uploader :image_second, ImageUploader
   mount_uploader :image_third, ImageUploader
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
 	validates :title, presence: true, length: { minimum: 5}
   validates :text, presence: true, length: { minimum: 5}
 
