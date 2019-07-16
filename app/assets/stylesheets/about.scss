@@ -6,6 +6,11 @@
 	font-size: 1rem;
 }
 
+#icon_two {
+  font-size: 36px;
+  padding-top: 20px; 
+}
+
 @media only screen and (max-width: 1199px),
 (min-device-width: 992px) and (max-device-width: 1199px) {
   .size_about {
@@ -26,3 +31,29 @@
 	font-size: 2.2rem;
   }
 }
+
+.last {
+  margin-bottom: 2rem;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.logo {
+  margin: 2rem;
+  font-size: 2rem;
+  font-style: italic;
+}
+
+#icons {
+  background-color: burlywood;
+  padding: 3rem 2rem;
+}
+
+.head {
+  border-bottom: 0.2rem solid chocolate;
+  border-top: 0.2rem solid chocolate;
+  display: inline;
+  font-size: 4rem;
+  padding: 0 1rem;
+}
+
