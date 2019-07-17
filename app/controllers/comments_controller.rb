@@ -48,7 +48,7 @@ class CommentsController < ApplicationController
     private
 
     def find_article
-    	@article = Article.find(params[:article_id])
+    	@article = Article.friendly.find(params[:article_id]) 
 
 	def comment_params
 		params.require(:comment).permit(:body, :article_id)

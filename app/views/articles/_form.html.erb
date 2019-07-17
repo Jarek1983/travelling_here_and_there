@@ -1,14 +1,17 @@
-<%= render 'common/errors', model: @article %>
+<section class="container flex-column d-flex justify-content-center pb-5">
 
-	 <%= simple_form_for @article do |f| %>
-	    <%= f.input :title, label: 'Miasto:' %>
-	    <%= f.input :text, label: 'Wpisz tekst:', as: :trix_editor %>
-	    <%= f.input :tags, label: 'Wskaż tags:' %> 
-    	<%= f.input :image, label: "Zdjęcie" %>
-    	<%= f.input :image_second, label: "Zdjęcie" %>
-    	<%= f.input :image_third, label: "Zdjęcie" %>
-	    <%= link_to 'Powrót', articles_path, class: 'btn btn-sd btn-info' %>
-	    <%= f.submit "Zapisz", class: 'btn btn-success' %>
+	<%= render 'common/errors', model: @article %>
 
-	<% end %>
+		 <%= simple_form_for @article do |f| %>
+		    <%= f.input :title, label: 'Miasto:' %>
+		    <%= f.input :text, label: 'Wpisz tekst:', as: :trix_editor %>
+		    <%= f.input :tags, label: 'Wskaż tags:' %> 
+	    	<%= f.input :image, label: "Zdjęcie" %>
+	    	<%= f.input :image_second, label: "Zdjęcie" %>
+	    	<%= f.input :image_third, label: "Zdjęcie" %>
+		    <%= link_to 'Powrót', articles_path, class: 'btn btn-sd btn-info' %>
+		    <%= f.submit "Zapisz", class: 'btn btn-success' %>
+
+		<% end %>
+</section>
 
