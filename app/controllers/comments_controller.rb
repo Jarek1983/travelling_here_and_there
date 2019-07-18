@@ -24,10 +24,10 @@ class CommentsController < ApplicationController
         if @comment.update(comment_params)
           flash[:notice] = "You update comment"
           # redirect_to article_path(@article)
-          redirect_to article_path(session[:article_id])
+          redirect_to article_path(params[:id])
         else
           # render 'edit'
-          redirect_to article_path(session[:article_id])
+          redirect_to article_path(params[:id])
         end
     end
 

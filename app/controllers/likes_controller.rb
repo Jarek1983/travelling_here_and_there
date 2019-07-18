@@ -1,11 +1,10 @@
 class LikesController < ApplicationController
 
 	def create
-	  like = Like.new(article_id: params[:article_id], user: current_user)
+	  like = Like.new(article_id: Article.find_by(slug: params[:article_id]).id, user: current_user)
 	  like.save
-	  # UserMailer.liked_article(like.article.user).deliver
 
-      redirect_to article_path(like.article)
+      redirect_to article_path(params[:article_id])
 	end
 
 	def destroy
