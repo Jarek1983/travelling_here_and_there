@@ -46,6 +46,7 @@ gem 'trix-rails', require: 'trix'
 gem 'friendly_id', '~> 5.2', '>= 5.2.5'
 
 
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'pry-rails' 
