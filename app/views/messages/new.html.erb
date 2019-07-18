@@ -1,2 +1,38 @@
-<h1>Messages#new</h1>
-<p>Find me in app/views/messages/new.html.erb</p>
+<section class="container-fluid pt-5 mx-auto text-center">
+	
+	<div class="row pt-5">
+		<div class="col-12 pt-5">
+
+			<h3 class="text-center">Formularz kontaktowy</h3>
+
+		</div>
+	</div>
+
+	<%= form_for(@message) do |f| %>
+
+		<div class="field">
+			<%= f.label :name %><br>
+			<%= f.text_field :name, class: "form-control"%>
+		</div>
+
+		<div class="field">
+			<%= f.label :email %><br>
+			<%= f.text_field :email, class: "form-control"%>
+		</div>
+
+		<div class="field">
+			<%= f.label :body %><br>
+			<%= f.text_field :body, class: "form-control"%>
+		</div>
+
+		<div class="pt-3 pb-2 captcha">
+			<%= recaptcha_tags %>
+		</div>
+
+		<div class="actions pb-5">
+			<%= f.submit "Wyślij", class: "btn_login" %>
+		</div>
+
+	<% end %>
+
+</section>
