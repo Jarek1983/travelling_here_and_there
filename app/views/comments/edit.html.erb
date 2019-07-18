@@ -1,14 +1,18 @@
-<%= render 'common/errors', model: @comment %>
+<section class="container flex-column d-flex justify-content-center pt-5">
 
- <%= form_for [@article, @comment] do |f| %>
+	<%= render 'common/errors', model: @comment %>
 
-  <p>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </p>
+	 <%= form_for [@article, @comment] do |f| %>
 
-  <p>
-    <%= f.submit %>
-  </p>
-  
-<% end %>
+	  <p class="pt-5">
+	    <%= f.label :tekst %><br/>
+	    <%= f.text_area :body, class: 'form-control' %>
+	  </p>
+
+	  <p>
+	    <%= f.submit "Aktualizuj", class: 'btn btn-success' %>
+	  </p>
+	  
+	<% end %>
+
+</section>
