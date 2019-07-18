@@ -101,8 +101,8 @@ class ArticlesController < ApplicationController
   private
 
   def authorize_article
-    if current_user != @article.user && !current_user&.admin?
-      flash[:alert] = "You are not allowed to be here"
+    if current_user == current_user&.admin?
+      flash[:alert] = "You have done!"
       redirect_to articles_path
       return false
     end
@@ -110,7 +110,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title,:text, :tags, :image, :image_second, :image_third)
+    params.require(:article).permit(:title,:text, :tags, :image, :image_second, :image_third, :image_fourth, :image_fifth, :image_sixth)
   end
 
   def find_article

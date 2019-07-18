@@ -1,26 +1,19 @@
 class CommentsController < ApplicationController
   before_action :find_article
 
-	def create
-		  # binding.pry
-		@comment = Comment.new(comment_params)
-    # @comment.article = @article
-		@article = @comment.article
-    @comment.user = current_user
+  def create
+    @comment = Comment.new(comment_params)
+    @comment.article = @article
     @like = Like.find_or_initialize_by(article: @article, user: current_user)
 
-		if @comment.save
-      # session[:commenter] = @comment.commenter
-      flash[:notice] = "You create comment"
-    #   redirect_to article_path(@article)
-    # else
-    #   render 'articles/show'
-    # end
-		  redirect_to article_path(session[:article_id])
-      else
-        redirect_to article_path(session[:article_id])
-      end
-	end
+    @comment.user = current_user
+    if @comment.save
+      flash[:notice] = "You've successfuly add this comment"
+      redirect_to article_path(@article)
+    else
+      render 'articles/show'
+    end
+  end
 
     def edit 
     	@comment = Comment.find(params[:id])

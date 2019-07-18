@@ -14,7 +14,7 @@
 
           <p>
             <strong>Opis: </strong>
-            <%= @article.text %>
+            <%=sanitize @article.text %>
           </p>
 
           <p>
@@ -22,13 +22,24 @@
           </p>
 
           <p>
-            <%= image_tag(@article.image_url) if @article.image_second?%>
+            <%= image_tag(@article.image_second_url) if @article.image_second?%>
           </p>
 
           <p>
-            <%= image_tag(@article.image_url) if @article.image_third?%>
+            <%= image_tag(@article.image_third_url) if @article.image_third?%>
           </p>
 
+          <p>
+            <%= image_tag(@article.image_fourth_url) if @article.image_fourth?%>
+          </p>
+
+          <p>
+            <%= image_tag(@article.image_fifth_url) if @article.image_fifth?%>
+          </p>
+
+          <p>
+            <%= image_tag(@article.image_sixth_url) if @article.image_sixth?%>
+          </p>
 
           <% if sponsored_article? @article %>
 

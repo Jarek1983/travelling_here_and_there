@@ -3,6 +3,9 @@ class Article < ApplicationRecord
   mount_uploader :image, ImageUploader
   mount_uploader :image_second, ImageUploader
   mount_uploader :image_third, ImageUploader
+  mount_uploader :image_fourth, ImageUploader
+  mount_uploader :image_fifth, ImageUploader
+  mount_uploader :image_sixth, ImageUploader
 
   extend FriendlyId
   friendly_id :title, use: :slugged
