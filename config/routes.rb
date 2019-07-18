@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :messages
+
   get 'about/index'
   devise_for :users
   root 'welcome#index'
@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       end
     resources :likes, only: [:create, :destroy]
   end
+  resources :messages
+  root 'messages#new'
     
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
