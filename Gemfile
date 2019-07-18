@@ -44,7 +44,7 @@ gem 'cloudinary'
 gem 'simple_form'
 gem 'trix-rails', require: 'trix'
 gem 'friendly_id', '~> 5.2', '>= 5.2.5'
-
+gem "recaptcha", require: "recaptcha/rails"
 
 
 group :development, :test do

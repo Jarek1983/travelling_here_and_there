@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'messages/new'
+  resources :messages
   get 'about/index'
   devise_for :users
   root 'welcome#index'
