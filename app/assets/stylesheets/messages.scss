@@ -1,3 +1,28 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.captcha {
+	padding-left: 480px;
+}
+
+@media only screen and (max-width: 1199px),
+(min-device-width: 992px) and (max-device-width: 1199px) {
+	.captcha {
+		padding-left: 340px;
+	}
+}
+
+@media only screen and (max-width: 991px),
+(min-device-width: 768px) and (max-device-width: 991px) {
+	.captcha {
+		padding-left: 310px;
+	}
+}
+
+@media only screen and (max-width: 767px),
+(min-device-width: 100px) and (max-device-width: 767px) {
+	.captcha {
+		padding-left: 325px;
+	}
+} 

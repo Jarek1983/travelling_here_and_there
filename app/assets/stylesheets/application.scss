@@ -21,6 +21,7 @@
  @import "articles";
  @import "login";
  @import "about";
+ @import "messages";
 
 html {height: 100%;}
 
@@ -41,16 +42,16 @@ body {
     height: 50px;
     margin: auto;
     border-radius: 8px;
-    background-color: #F5F5DC;
+    background-color: #98DDDE;
     font-size: 1.2rem;
 }
 
 .form-control2 {
     width: 30%;
-    height: 50px;
+    height: 40px;
     margin: auto;
     border-radius: 10px;
-    background-color: #F5F5DC;
+    background-color: #EADEDB;
     font-size: 1.2rem;
     text-align: center;
 }
@@ -60,7 +61,7 @@ body {
     height: 50px;
     margin: auto;
     border-radius: 10px;
-    background-color: #F5F5DC;
+    background-color: #98DDDE;
     font-size: 1.2rem;
     text-align: center;
 }
@@ -90,7 +91,7 @@ body {
 
   .form-control2 {
       width: 40%;
-      height: 60px !important;
+      height: 45px !important;
       margin: auto;
       border-radius: 10px;
       font-size: 1.4rem;
@@ -117,7 +118,7 @@ body {
 
   .form-control2 {
       width: 50%;
-      height: 60px !important;
+      height: 50px !important;
       margin: auto;
       border-radius: 10px;
       font-size: 1.2rem;
@@ -145,7 +146,7 @@ body {
   .form-control2 {
     width: 60%;
     border-radius: 10px;
-    height: 100px !important;
+    height: 50px !important;
     font-size: 1.8rem;
     text-align: center;
     }
