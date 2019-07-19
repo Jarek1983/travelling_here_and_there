@@ -49,9 +49,10 @@ body {
     width: 30%;
     height: 50px;
     margin: auto;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: #F5F5DC;
     font-size: 1.2rem;
+    text-align: center;
 }
 
 .image_welcome {
@@ -81,8 +82,9 @@ body {
       width: 40%;
       height: 60px !important;
       margin: auto;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 1.4rem;
+      text-align: center;
   }
 
   .image_welcome {
@@ -98,8 +100,9 @@ body {
       width: 50%;
       height: 60px !important;
       margin: auto;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 1.2rem;
+      text-align: center;
     }
   .image_welcome {
     width: 100%;
@@ -110,14 +113,15 @@ body {
 (min-device-width: 100px) and (max-device-width: 767px)  {
 
 
-    .form-control2 {
-      width: 100%;
-      border-radius: 10px;
-      height: 100px !important;
-      font-size: 1.8rem;
+  .form-control2 {
+    width: 100%;
+    border-radius: 10px;
+    height: 100px !important;
+    font-size: 1.8rem;
+    text-align: center;
     }
-    .image_welcome {
-      width: 100%;
+  .image_welcome {
+    width: 100%;
     }
 }
 
