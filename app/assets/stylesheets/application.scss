@@ -56,7 +56,6 @@ body {
 
 .image_welcome {
     width: 75%;
-    padding-top: 10%;
 }
 
 .sponsored {
@@ -68,6 +67,12 @@ body {
   background: #CCCCCC;
 }
 
+.notice, .alert {
+  font-size :1.4rem;
+  padding-top :7%;
+  text-align: center;
+  color: RGB(47, 79, 79);
+}
 
 @media only screen and (max-width: 1199px),
 (min-device-width: 992px) and (max-device-width: 1199px) {
@@ -82,7 +87,6 @@ body {
 
   .image_welcome {
     width: 80%;
-    padding-top: 10%;
   }
 }
 
@@ -99,7 +103,6 @@ body {
     }
   .image_welcome {
     width: 100%;
-    padding-top: 13%;
     }
 }
 
@@ -114,8 +117,7 @@ body {
       font-size: 1.8rem;
     }
     .image_welcome {
-    width: 100%;
-    padding-top: 25%;
+      width: 100%;
     }
 }
 

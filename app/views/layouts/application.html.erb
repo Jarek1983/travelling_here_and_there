@@ -15,24 +15,34 @@
 
  <body>
 
-    <%= render 'shared/navigation' %>
+  <%= render 'shared/navigation' %>
       
-        <% if notice %>
-          <div class="show_notice">
-            <%= notice %>
-          </div>
-        <% end %>
+  <div class="pt-5">
 
-        <% if alert %>
-          <div class="show_alert">
-            <%= alert %>
-          </div>
-        <% end %>
+    <% if notice %>
+
+      <div class="notice">
+
+        <%= notice %>
+
+      </div>
+
+    <% end %>
+
+    <% if alert %>
+
+      <div class="alert">
+
+        <%= alert %>
+      
+      </div>
+
+    <% end %>
         
-        <%= yield %>
+    <%= yield %>
 
 
-        <%= render 'shared/footer' %>
+  <%= render 'shared/footer' %>
 
   </body>
 

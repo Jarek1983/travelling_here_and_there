@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :find_article, only: [:show, :edit, :update, :destroy, :toggle_visibility]
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :authorize_article, only: [:destroy, :edit, :update]
+  # before_action :authorize_article, only: [:destroy, :edit, :update]
+  before_action :admin_authorize, except: [:index, :show]
   
   def index
     if current_user&.admin?
@@ -37,7 +38,6 @@ class ArticlesController < ApplicationController
   def show
     @articles = Article.find_by_id(session[:article_id])
     @comment = Comment.new
-    @grade = Grade.new
     @like = Like.find_or_initialize_by(article: @article, user: current_user)
     # @article = Article.find(params[:id])
     # find_article
@@ -65,14 +65,14 @@ class ArticlesController < ApplicationController
     # @article = Article.find(params[:id])
     # if @current_user ||= User.find(session[:user_id]) if session[:user_id]
     session[:article_id] = @article.id
-    return unless authorize_article
+    # return unless authorize_article
   end
 
   def update
   	# article_params = params.require(:article).permit(:title, :text)
     # @article = Article.find(params[:id])
     # find_article
-    return unless authorize_article
+    # return unless authorize_article
 
 	  if  @article.update(article_params)
       flash[:notice] = "You edit article"
@@ -85,7 +85,7 @@ class ArticlesController < ApplicationController
   def destroy
     # @article = Article.find(params[:id])
     # find_article
-    return unless authorize_article
+    # return unless authorize_article
 
     @article.destroy
     flash[:alert] = "You delete article"
@@ -100,14 +100,19 @@ class ArticlesController < ApplicationController
 
   private
 
-  def authorize_article
-    if current_user == current_user&.admin?
-      flash[:alert] = "You have done!"
-      redirect_to articles_path
-      return false
-    end
-    true
-  end
+    def admin_authorize
+    redirect_to new_user_session_path, 
+    alert: "Only for Admin!" unless current_user.admin
+  end 
+
+  # def authorize_article
+  #   if current_user == current_user&.admin?
+  #     flash[:alert] = "You have done!"
+  #     redirect_to articles_path
+  #     return false
+  #   end
+  #   true
+  # end
 
   def article_params
     params.require(:article).permit(:title,:text, :tags, :image, :image_second, :image_third, :image_fourth, :image_fifth, :image_sixth)
