@@ -55,6 +55,16 @@ body {
     text-align: center;
 }
 
+.form-control3 {
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #F5F5DC;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
 .image_welcome {
     width: 75%;
 }
@@ -87,6 +97,15 @@ body {
       text-align: center;
   }
 
+  .form-control3 {
+      width: 100%;
+      height: 60px !important;
+      margin: auto;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      text-align: center;
+  }
+
   .image_welcome {
     width: 80%;
   }
@@ -104,6 +123,16 @@ body {
       font-size: 1.2rem;
       text-align: center;
     }
+
+  .form-control3 {
+      width: 400%;
+      height: 60px !important;
+      margin: auto;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      text-align: center;
+  }
+
   .image_welcome {
     width: 100%;
     }
@@ -114,12 +143,22 @@ body {
 
 
   .form-control2 {
-    width: 100%;
+    width: 60%;
     border-radius: 10px;
     height: 100px !important;
     font-size: 1.8rem;
     text-align: center;
     }
+
+    .form-control3 {
+      width: 250%;
+      height: 60px !important;
+      margin: auto;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      text-align: center;
+  }
+
   .image_welcome {
     width: 100%;
     }
