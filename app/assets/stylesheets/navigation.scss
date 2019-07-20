@@ -1,6 +1,29 @@
 nav {
-	height: 10vh;
+	height: 12vh;
+	font-size: 3vh;
 }
+
+.navbar-brand {
+	font-size: 3vh;
+}
+
+@media only screen and (max-width: 991px),
+(min-device-width: 768px) and (max-device-width: 991px) {
+
+	nav {
+		height: 12vh;
+		font-size: 4vh;
+	}
+
+	.navbar-brand {
+		font-size: 4vh;
+		}
+	}
+
+.navbar-toggler-icon {
+	font-size: 3vh;
+}
+
 
 .navbar {
 	font-family: 'MergeRegular-1', 'MergeRegular-2', Helvetica, sans-serif;
