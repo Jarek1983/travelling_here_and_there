@@ -11,33 +11,6 @@
   padding-top: 20px; 
 }
 
-@media only screen and (max-width: 1199px),
-(min-device-width: 992px) and (max-device-width: 1199px) {
-  .size_about {
-	font-size: 1.6rem;
-  }
-}
-
-@media only screen and (max-width: 991px),
-(min-device-width: 768px) and (max-device-width: 991px) {
-  .size_about {
-	font-size: 1.8rem;
-  }
-}
-
-@media only screen and (max-width: 767px),
-(min-device-width: 100px) and (max-device-width: 767px) {
-  .size_about {
-	font-size: 2.2rem;
-  }
-}
-
-.last {
-  margin-bottom: 2rem;
-  font-size: 0.75rem;
-  font-style: italic;
-}
-
 .logo {
   margin: 2rem;
   font-size: 2rem;
@@ -46,7 +19,8 @@
 
 #icons {
   background-color: burlywood;
-  padding: 3rem 2rem;
+  padding-top: 3rem;
+  padding-bottom: 6rem;
 }
 
 .head {
@@ -56,4 +30,54 @@
   font-size: 4rem;
   padding: 0 1rem;
 }
+
+
+@media only screen and (max-width: 1199px),
+(min-device-width: 992px) and (max-device-width: 1199px) {
+
+  .size_about {
+	   font-size: 1.6rem;
+  }
+
+  h2, h5, p, h3 {
+    font-size: 2vh;
+  }
+}
+
+@media only screen and (max-width: 991px),
+(min-device-width: 768px) and (max-device-width: 991px) {
+
+  .size_about {
+	   font-size: 1.8rem;
+  }
+
+  h2, h5, p, h3 {
+    font-size: 2.2vh;
+  }
+}
+
+@media only screen and (max-width: 767px),
+(min-device-width: 501px) and (max-device-width: 767px) {
+
+  .size_about {
+	   font-size: 2.2rem;
+  }
+
+  h2, h5, p, h3, h1 {
+    font-size: 2.4vh;
+  }
+}
+
+@media only screen and (max-width: 501px),
+(min-device-width: 100px) and (max-device-width: 501px) {
+
+  .size_about {
+     font-size: 2.2rem;
+  }
+
+  h2, h5, p, h3 {
+    font-size: 2vh;
+  }
+}
+
 

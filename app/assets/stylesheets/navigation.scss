@@ -1,11 +1,15 @@
 nav {
 	height: 12vh;
 	font-size: 3vh;
-}
+	}
 
 .navbar-brand {
 	font-size: 3vh;
-}
+	}
+
+#navbarsExample01 {
+	z-index: 1;
+	}
 
 @media only screen and (max-width: 991px),
 (min-device-width: 768px) and (max-device-width: 991px) {
