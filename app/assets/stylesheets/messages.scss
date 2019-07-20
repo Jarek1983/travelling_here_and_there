@@ -2,8 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .captcha {
-	padding-left: 480px;
+		padding-left: 550px;
+	}
+
+@media only screen and (max-width: 1300px),
+(min-device-width: 1200px) and (max-device-width: 1300px) {
+	.captcha {
+		padding-left: 470px;
+	}
 }
 
 @media only screen and (max-width: 1199px),

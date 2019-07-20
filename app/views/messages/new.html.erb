@@ -2,14 +2,6 @@
 
 	<%= render 'common/errors', model: @message %>
 
-	<div class="row pt-5">
-		<div class="col-12">
-
-			<h3 class="text-center">Formularz kontaktowy</h3>
-
-		</div>
-	</div>
-
 	<%= form_for(@message) do |f| %>
 
 		<div class="field p-2">
@@ -24,7 +16,7 @@
 
 		<div class="field p-2">
 			<%= f.label :tekst %><br>
-			<%= f.text_area :body, class: "form-control2", style: "height:20vh; width:50vh;"%>
+			<%= f.text_area :body, class: "form-control4"%>
 		</div>
 
 		<div class="pt-3 pb-2 captcha">
