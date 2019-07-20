@@ -47,12 +47,12 @@ body {
 }
 
 .form-control2 {
-    width: 30%;
-    height: 40px;
+    width: 50vh;
+    height: 8vh;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 14px;
     background-color: #EADEDB;
-    font-size: 1.2rem;
+    font-size: 3vh;
     text-align: center;
 }
 
@@ -90,11 +90,11 @@ body {
 (min-device-width: 992px) and (max-device-width: 1199px) {
 
   .form-control2 {
-      width: 40%;
-      height: 45px !important;
+      width: 50vh;
+      height: 8vh !important;
       margin: auto;
-      border-radius: 10px;
-      font-size: 1.4rem;
+      border-radius: 14px;
+      font-size: 3vh;
       text-align: center;
   }
 
@@ -114,14 +114,14 @@ body {
 
 
 @media only screen and (max-width: 991px),
-(min-device-width: 768px) and (max-device-width: 991px) {
+(min-device-width: 769px) and (max-device-width: 991px) {
 
   .form-control2 {
-      width: 50%;
-      height: 50px !important;
+      width: 60vh;
+      height: 8vh !important;
       margin: auto;
-      border-radius: 10px;
-      font-size: 1.2rem;
+      border-radius: 14px;
+      font-size: 4vh;
       text-align: center;
     }
 
@@ -139,15 +139,28 @@ body {
     }
 }
 
+@media only screen and (device-width: 768px) {
+  /* For general iPad layouts */
+
+  .form-control2 {
+      width: 40vh;
+      height: 6vh !important;
+      margin: auto;
+      border-radius: 14px;
+      font-size: 3vh;
+      text-align: center;
+    }
+}
+
 @media only screen and (max-width: 767px),
 (min-device-width: 100px) and (max-device-width: 767px)  {
 
 
   .form-control2 {
-    width: 60%;
-    border-radius: 10px;
-    height: 50px !important;
-    font-size: 1.8rem;
+    width: 44vh;
+    border-radius: 14px;
+    height: 8vh !important;
+    font-size: 3vh;
     text-align: center;
     }
 
