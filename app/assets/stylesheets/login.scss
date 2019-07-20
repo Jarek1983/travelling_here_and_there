@@ -132,7 +132,7 @@
 		padding-top: 8%;
 	}
 	.btn_login {
-	    width: 42vh;
+	    width: 100vh;
 		height: 10vh;
 		font-size: 4vh;
 		margin-left: -200px;
@@ -143,11 +143,39 @@
 	}
 }
 
+
+
 @media only screen and (max-width: 640px),
-(min-device-width: 385px) and (max-device-width: 640px) {
+(min-device-width: 601px) and (max-device-width: 640px) {
 
 	.btn_login {
 	    width: 48vh;
+		height: 10vh;
+		font-size: 4vh;
+		}
+	.field {
+		font-size: 1.8rem;
+	}
+}
+
+@media only screen and (max-width: 600px),
+(min-device-width: 501px) and (max-device-width: 600px) {
+
+	.btn_login {
+	    width: 100vh;
+		height: 10vh;
+		font-size: 4vh;
+		}
+	.field {
+		font-size: 1.8rem;
+	}
+}
+
+@media only screen and (max-width: 500px),
+(min-device-width: 385px) and (max-device-width: 500px) {
+
+	.btn_login {
+	    width: 40vh;
 		height: 10vh;
 		font-size: 4vh;
 		}
@@ -160,7 +188,7 @@
 (min-device-width: 100px) and (max-device-width: 384px) {
 
 	.btn_login {
-	    width: 44vh;
+	    width: 42vh;
 		height: 10vh;
 		font-size: 4vh;
 		}

@@ -177,7 +177,7 @@ body {
 (min-device-width: 641px) and (max-device-width: 767px)  {
 
   .form-control2 {
-    width: 42vh;
+    width: 100vh;
     height: 10vh !important;
     border-radius: 14px;   
     margin-left: -200px;
@@ -203,10 +203,68 @@ body {
 }
 
 @media only screen and (max-width: 640px),
-(min-device-width: 385px) and (max-device-width: 640px)  {
+(min-device-width: 601px) and (max-device-width: 640px)  {
 
   .form-control2 {
-    width: 48vh;
+    width: 100vh;
+    height: 10vh !important;
+    border-radius: 14px;   
+    margin-left: -200px;
+    margin-right: -200px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 4vh;
+    text-align: center;
+    }
+
+    .form-control3 {
+      width: 250%;
+      height: 60px !important;
+      margin: auto;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      text-align: center;
+  }
+
+  .image_welcome {
+    width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px),
+(min-device-width: 500px) and (max-device-width: 600px)  {
+
+  .form-control2 {
+    width: 100vh;
+    height: 10vh !important;
+    border-radius: 14px;   
+    margin-left: -200px;
+    margin-right: -200px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 4vh;
+    text-align: center;
+    }
+
+    .form-control3 {
+      width: 250%;
+      height: 60px !important;
+      margin: auto;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      text-align: center;
+  }
+
+  .image_welcome {
+    width: 100%;
+    }
+}
+
+@media only screen and (max-width: 501px),
+(min-device-width: 385px) and (max-device-width: 501px)  {
+
+  .form-control2 {
+    width: 40vh;
     height: 10vh !important;
     border-radius: 14px;   
     margin-left: -200px;
@@ -235,7 +293,7 @@ body {
 (min-device-width: 100px) and (max-device-width: 384px)  {
 
   .form-control2 {
-    width: 44vh;
+    width: 42vh;
     height: 10vh !important;
     border-radius: 14px;   
     margin-left: -200px;
