@@ -1,49 +1,51 @@
-    <nav class="navbar navbar-expand-lg bg-dark navbar-light p-3 fixed-top">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav"><span class="navbar-toggler-icon"></span></button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Menu</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse justify-content-between" id="nav">
-          <ul class="navbar-nav">
-              <li class="nav-item">
-                <%= link_to 'Świat', articles_path, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-               <%= link_to 'Polska', articles_path, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-                <%= link_to 'Youtube', "https://www.youtube.com/channel/UCd1UQnE4_p_lsIS5v4F7e0g?view_as=subscriber", target: :_blank, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-                <%= link_to 'O mnie', about_index_path, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-                <%= link_to 'Kontakt', new_message_path, class: 'nav-link' %>
-              </li>
+      <div class="collapse navbar-collapse" id="navbarsExample01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to 'Świat', articles_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Youtube', "https://www.youtube.com/channel/UCd1UQnE4_p_lsIS5v4F7e0g?view_as=subscriber", target: :_blank, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'O mnie', about_index_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Kontakt', new_message_path, class: 'nav-link' %>
+          </li>
 
-              <% if current_user && current_user.admin? %>
+          <% if current_user && current_user.admin? %>
 
-              <li class="nav-item">
-                <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-              </li>
+          <li class="nav-item">
+            <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
 
-                <% elsif current_user %>
+          <% elsif current_user %>
 
-              <li class="nav-item">
-                <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-              </li>
+          <li class="nav-item">
+            <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
             
-              <% else %>
+          <% else %>
 
-              <li class="nav-item">
-                <%= link_to 'Zaloguj', new_user_session_path, class: 'nav-link'%>
-              </li>
+          <li class="nav-item">
+            <%= link_to 'Zaloguj', new_user_session_path, class: 'nav-link'%>
+          </li>
 
-              <li class="nav-item">
-                  <%= link_to 'Utwórz konto', new_user_registration_path, class: 'nav-link'%>
-              </li> 
+          <li class="nav-item">
+            <%= link_to 'Utwórz konto', new_user_registration_path, class: 'nav-link'%>
+          </li> 
 
-              <% end %>
-          </ul>
-
+          <% end %>
+        </ul>
+      </div>
+</nav>
+<!-- 
               <form class="form-inline">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Search">
@@ -51,9 +53,7 @@
                       <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
                     </div>
                 </div>  
-              </form>      
-        </div>     
-    </nav>
+              </form>   -->    
 
 
 <!--         <div class="navbar-nav form-inline mt-2 mt-md-0">

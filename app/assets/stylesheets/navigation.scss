@@ -1,5 +1,5 @@
 nav {
-	text-shadow: 0.5px 0.5px #556B2F;
+	height: 10vh;
 }
 
 .navbar {
@@ -48,4 +48,8 @@ nav {
 	border: 2px solid #ffffff !important;
 	padding-bottom: 0.5rem !important;
 	outline: 0;
+}
+
+.nav-link {
+	background-color: #343a40;
 }

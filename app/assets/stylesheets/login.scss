@@ -1,6 +1,10 @@
+label {
+    font-size: 3vh;
+  }
+
 .login {
-	font-size: 1.2rem;
 	padding-top: 5%;
+	padding-bottom: 5%;
 	}
 
 .btn_login {
@@ -11,66 +15,60 @@
 	font-size: 3vh;
 }
 
-.field {
-	font-size: 1.6rem;
+.fields {
+    font-size: 3vh;
 }
 
 @media only screen and (max-width: 1199px),
 (min-device-width: 1025px) and (max-device-width: 1199px) {
-	.login {
-		font-size: 1.4rem;
-		padding-top: 8%;
+	label {
+	   font-size: 4vh;
 	}
 	.btn_login {
 		width: 50vh;
 		height: 8vh;
 		font-size: 4vh;
 	}
-	.field {
-	    font-size: 1.6rem;
+	.fields {
+	    font-size: 4vh;
 	}
 }
 
 @media only screen and (max-width: 1024px),
 (min-device-width: 1024px) and (max-device-width: 1024px) {
 
-	.login {
-		font-size: 1.4rem;
-		padding-top: 8%;
+	label {
+	   font-size: 4vh;
 	}
 	.btn_login {
 		width: 64vh;
 		height: 6vh;
-		font-size: 3vh;
+		font-size: 4vh;
 	}
-	.field {
-	    font-size: 1.6rem;
+	.fields {
+	    font-size: 4vh;
 	}
 }
 
 @media only screen and (max-width: 1023px),
 (min-device-width: 992px) and (max-device-width: 1023px) {
-	.login {
-		font-size: 1.4rem;
-		padding-top: 8%;
+	label {
+	   font-size: 4vh;
 	}
 	.btn_login {
 		width: 66vh;
 		height: 12vh;
 		font-size: 4vh;
 	}
-	.field {
-	    font-size: 4vh;
+	.fields {
+        font-size: 4vh;
 	}
 }
 
 @media only screen and (max-width: 991px),
 (min-device-width: 800px) and (max-device-width: 991px) {
-	.login {
-		font-size: 1.4rem;
-		padding-top: 8%;
-		height: 100vh;
-		width: 100vh;
+	label {
+	   font-size: 4vh;
 	}
 	.btn_login {
 	    width: 56vh;
@@ -79,18 +77,15 @@
 		margin-left: -200px;
 		margin-right: -200px;
 		}
-	.field {
-		font-size: 1.2rem;
+	.fields {
+        font-size: 4vh;
 	}
 }
 
 @media only screen and (max-width: 799px),
 (min-device-width: 769px) and (max-device-width: 799px) {
-	.login {
-		font-size: 1.4rem;
-		padding-top: 8%;
-		height: 100vh;
-		width: 100vh;
+	label {
+	   font-size: 4vh;
 	}
 	.btn_login {
 	    width: 56vh;
@@ -99,18 +94,15 @@
 		margin-left: -200px;
 		margin-right: -200px;
 		}
-	.field {
-		font-size: 1.2rem;
+	.fields {
+        font-size: 4vh;
 	}
 }
 
 @media only screen and (max-width: 768px),
 (min-device-width: 768px) and (max-device-width: 768px) {
-	.login {
-		font-size: 1.4rem;
-		padding-top: 8%;
-		height: 100vh;
-		width: 100vh;
+	label {
+	   font-size: 4vh;
 	}
 	.btn_login {
 	    width: 62vh;
@@ -119,17 +111,15 @@
 		margin-left: -200px;
 		margin-right: -200px;
 		}
-	.field {
-		font-size: 1.2rem;
+	.fields {
+		font-size: 4vh;
 	}
 }
 
-
 @media only screen and (max-width: 767px),
 (min-device-width: 641px) and (max-device-width: 767px) {
-	.login {
-		font-size: 1.8rem;
-		padding-top: 8%;
+	label {
+	   font-size: 4vh;
 	}
 	.btn_login {
 	    width: 100vh;
@@ -138,62 +128,68 @@
 		margin-left: -200px;
 		margin-right: -200px;
 		}
-	.field {
-		font-size: 1rem;
+	.fields {
+		font-size: 4vh;
 	}
 }
-
-
 
 @media only screen and (max-width: 640px),
 (min-device-width: 601px) and (max-device-width: 640px) {
-
-	.btn_login {
-	    width: 48vh;
-		height: 10vh;
-		font-size: 4vh;
-		}
-	.field {
-		font-size: 1.8rem;
+	label {
+	   font-size: 4vh;
 	}
-}
-
-@media only screen and (max-width: 600px),
-(min-device-width: 501px) and (max-device-width: 600px) {
-
 	.btn_login {
 	    width: 100vh;
 		height: 10vh;
 		font-size: 4vh;
 		}
-	.field {
-		font-size: 1.8rem;
+	.fields {
+		font-size: 4vh;
+	}
+}
+
+@media only screen and (max-width: 600px),
+(min-device-width: 501px) and (max-device-width: 600px) {
+	label {
+	   font-size: 4vh;
+	}
+	.btn_login {
+	    width: 56vh;
+		height: 10vh;
+		font-size: 4vh;
+		}
+	.fields {
+		font-size: 4vh;
 	}
 }
 
 @media only screen and (max-width: 500px),
 (min-device-width: 385px) and (max-device-width: 500px) {
-
+	label {
+	   font-size: 4vh;
+	}
 	.btn_login {
 	    width: 40vh;
 		height: 10vh;
 		font-size: 4vh;
 		}
-	.field {
-		font-size: 1.8rem;
+	.fields {
+		font-size: 4vh;
 	}
 }
 
 @media only screen and (max-width: 384px),
 (min-device-width: 100px) and (max-device-width: 384px) {
-
+	label {
+	   font-size: 4vh;
+	}
 	.btn_login {
 	    width: 42vh;
-		height: 10vh;
+		height: 8vh;
 		font-size: 4vh;
 		}
-	.field {
-		font-size: 2rem;
+	.fields {
+		font-size: 4vh;
 	}
 }
 

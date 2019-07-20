@@ -108,7 +108,7 @@ body {
       height: 12vh !important;
       margin: auto;
       border-radius: 14px;
-      font-size: 4vh;
+      font-size: 3vh;
       text-align: center;
   }
 
@@ -168,7 +168,7 @@ body {
       margin-top: auto;
       margin-bottom: auto;
       border-radius: 14px;
-      font-size: 3vh;
+      font-size: 4vh;
       text-align: center;
     }
 }
@@ -196,10 +196,6 @@ body {
       font-size: 1.4rem;
       text-align: center;
   }
-
-  .image_welcome {
-    width: 100%;
-    }
 }
 
 @media only screen and (max-width: 640px),
@@ -225,17 +221,13 @@ body {
       font-size: 1.4rem;
       text-align: center;
   }
-
-  .image_welcome {
-    width: 100%;
-    }
 }
 
 @media only screen and (max-width: 600px),
 (min-device-width: 500px) and (max-device-width: 600px)  {
 
   .form-control2 {
-    width: 100vh;
+    width: 56vh;
     height: 10vh !important;
     border-radius: 14px;   
     margin-left: -200px;
@@ -254,10 +246,6 @@ body {
       font-size: 1.4rem;
       text-align: center;
   }
-
-  .image_welcome {
-    width: 100%;
-    }
 }
 
 @media only screen and (max-width: 501px),
@@ -283,10 +271,6 @@ body {
       font-size: 1.4rem;
       text-align: center;
   }
-
-  .image_welcome {
-    width: 100%;
-    }
 }
 
 @media only screen and (max-width: 384px),
@@ -294,7 +278,7 @@ body {
 
   .form-control2 {
     width: 42vh;
-    height: 10vh !important;
+    height: 8vh !important;
     border-radius: 14px;   
     margin-left: -200px;
     margin-right: -200px;
@@ -312,10 +296,6 @@ body {
       font-size: 1.4rem;
       text-align: center;
   }
-
-  .image_welcome {
-    width: 100%;
-    }
 }
 
 
