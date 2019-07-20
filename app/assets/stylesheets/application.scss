@@ -68,7 +68,6 @@ body {
     height: 50px;
     margin: auto;
     border-radius: 10px;
-    background-color: #98DDDE;
     font-size: 1.2rem;
     text-align: center;
 }
@@ -358,13 +357,10 @@ body {
 /*buttons */
     @media only screen and (min-width: 1200px) {
       
-      .new_form {
-        width: 75%;
-        line-height: 200%;
-      }
       .new_submit {
-        font-size: 1rem;
-        padding-top: 5%;
+        width: 26vh;
+        height: 6vh;
+        font-size: 3vh;
       }
     }
 
@@ -372,55 +368,51 @@ body {
     @media only screen and (max-width: 1199px),
     (min-device-width: 992px) and (max-device-width: 1199px) {
 
-      .new_form {
-        width: 50%;
-        line-height: 300%;
-      }
-      .form2 {
-        height: 50px;
-      }
       .new_submit {
-        font-size: 1.5rem;
-        padding-top: 5%;
-      }
+        width: 24vh;
+        height: 6vh;
+        font-size: 3vh;
+  }
     }
 
     @media only screen and (max-width: 991px),
     (min-device-width: 768px) and (max-device-width: 991px) {
 
-      .new_article {
-        width: 25%;
-      }
-      .new_form {
-        width: 100%;
-        line-height: 100%;
-      }
-      .form2 {
-        height: 60px;
-      }
       .new_submit {
-        font-size: 2.0rem;
-        line-height: 100%;
-        padding-top: 8%;
-      }
+        width: 20vh;
+        height: 6vh;
+        font-size: 3vh;
+        }
+
     }
 
     @media only screen and (max-width: 767px),
-    (min-device-width: 100px) and (max-device-width: 767px) {
+    (min-device-width: 601px) and (max-device-width: 767px) {
 
-      .new_article {
-        width: 40%;
-      }
-      .new_form {
-        width: 90%;
-      }
-      .form2 {
-        height: 70px;
-      }
       .new_submit {
-        font-size: 2.0rem;
-        line-height: 100%;
-        padding-top: 15%;
+        width: 25vh;
+        height: 6vh;
+        font-size: 3vh;
+      }
+    }
+
+    @media only screen and (max-width: 600px),
+    (min-device-width: 501px) and (max-device-width: 600px) {
+
+      .new_submit {
+        width: 20vh;
+        height: 5vh;
+        font-size: 3vh;
+      }
+    }
+
+    @media only screen and (max-width: 500px),
+    (min-device-width: 100px) and (max-device-width: 500px) {
+
+      .new_submit {
+        width: 20vh;
+        height: 4vh;
+        font-size: 2vh;
       }
     }
 

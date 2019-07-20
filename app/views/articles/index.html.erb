@@ -3,9 +3,7 @@
   <div class="row pt-5">
       <div class="col-12">
 
-          <div class="new_article">
-            <%= link_to 'Nowy artykuł', new_article_path, class: "btn btn-primary btn-new" %> <hr/>
-          </div>
+            <%= link_to 'Nowy artykuł', new_article_path, class: "btn btn-primary new_submit" %> <hr/>
 
           <div class="row">
               <% @articles.each do |article| %>
@@ -31,17 +29,16 @@
                                   <% end %> 
                                 </h4>
 
-                                <h4><%= link_to "Summary", article_path(article), class: "btn btn-info summary btn-new", id: "summary-#{article.id}" %>
+                                <h4><%= link_to "Summary", article_path(article), class: "btn btn-lg btn-info summary", id: "summary-#{article.id}" %>
                                    
                                  </h4>
                   
                                 <% if article.user == current_user || current_user&.admin? %>
 
                                   <div class="p-2">
-                                    <%= link_to 'Pokaż', article_path(article), class: "btn btn-primary btn-new" %>
-                                    <%= link_to 'Edytuj', edit_article_path(article), class: "btn btn-info btn-new" %>
-                                    <%= link_to 'Usuń', article_path(article), method: :delete, data: {confirm: 'Czy na pewno usunąć?'}, class: "btn btn-danger btn-new" %>
-                                 
+                                    <%= link_to 'Pokaż', article_path(article), class: "btn btn-lg btn-primary" %>
+                                    <%= link_to 'Edytuj', edit_article_path(article), class: "btn btn-lg btn-info" %>
+                                    <%= link_to 'Usuń', article_path(article), method: :delete, data: {confirm: 'Czy na pewno usunąć?'}, class: "btn btn-lg btn-danger" %>
                                   </div>
                                 <% end %>
 
