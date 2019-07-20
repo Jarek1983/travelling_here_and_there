@@ -90,7 +90,7 @@ body {
 (min-device-width: 992px) and (max-device-width: 1199px) {
 
   .form-control2 {
-      width: 100vh;
+      width: 66vh;
       height: 12vh !important;
       margin: auto;
       border-radius: 14px;
@@ -117,12 +117,13 @@ body {
 (min-device-width: 769px) and (max-device-width: 991px) {
 
   .form-control2 {
-      width: 60vh;
-      height: 8vh !important;
+      width: 46vh;
+      height: 10vh !important;
       margin: auto;
       border-radius: 14px;
       font-size: 4vh;
       text-align: center;
+      background-color: !important;
     }
 
   .form-control3 {
@@ -143,8 +144,8 @@ body {
   /* For general iPad layouts */
 
   .form-control2 {
-      width: 40vh;
-      height: 6vh !important;
+      width: 46vh;
+      height: 8vh !important;
       margin: auto;
       border-radius: 14px;
       font-size: 3vh;
@@ -157,10 +158,10 @@ body {
 
 
   .form-control2 {
-    width: 44vh;
+    width: 36vh;
     border-radius: 14px;
-    height: 8vh !important;
-    font-size: 3vh;
+    height: 10vh !important;
+    font-size: 4vh;
     text-align: center;
     }
 
