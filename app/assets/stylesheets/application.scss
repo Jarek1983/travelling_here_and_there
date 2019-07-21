@@ -39,10 +39,10 @@ body {
 }
 
 .form-control {
-    width: 60vh;
-    height: 8vh;
+    width: 100vh;
+    height: 10vh;
     margin: auto;
-    border-radius: 14px;
+    border-radius: 20px;
     font-size: 3vh;
     text-align: center;
 }
@@ -51,7 +51,7 @@ body {
     width: 100vh;
     height: 20vh;
     margin: auto;
-    border-radius: 14px;
+    border-radius: 20px;
     font-size: 3vh;
 }
 
@@ -83,26 +83,18 @@ body {
   color: RGB(47, 79, 79);
 }
 
-  
-
-
-
 @media only screen and (max-width: 1024px),
 (min-device-width: 1024px) and (max-device-width: 1024px) {
 
   .form-control {
-    width: 64vh;
-    height: 8vh !important;
+    width: 100vh;
     margin: auto;
-    border-radius: 14px;
     font-size: 3vh;
   }
 
   .form-control2 {
-    width: 64vh;
-    height: 20vh;
+    width: 100vh;
     margin: auto;
-    border-radius: 14px;
     font-size: 3vh;
   }
 }
@@ -111,10 +103,8 @@ body {
 (min-device-width: 992px) and (max-device-width: 1023px) {
 
   .form-control {
-    width: 66vh;
-    height: 12vh !important;
+    width: 100vh;
     margin: auto;
-    border-radius: 14px;
     font-size: 3vh;
   }
 
@@ -128,23 +118,20 @@ body {
 (min-device-width: 769px) and (max-device-width: 991px) {
 
   .form-control {
-    width: 46vh;
-    height: 10vh !important;
+    width: 100vh;
     margin: auto;
     border-radius: 14px;
     font-size: 4vh;
   }
 
   .form-control2 {
-    width: 56vh;
-    height: 20vh;
+    width: 100vh;
     margin: auto;
-    border-radius: 14px;
     font-size: 3vh;
   }
 
   .form-control3 {
-    width: 40vh;
+    width: 100vh;
     margin: auto;
   }
 
@@ -157,15 +144,21 @@ body {
   /* For general iPad layouts */
 
   .form-control {
-      width: 62vh;
+      width: 100vh;
       height: 10vh !important;
       margin: auto;
       border-radius: 14px;
       font-size: 4vh;
     }
 
-  .form-control4 {
-    width: 40vh;
+  .form-control2 {
+    width: 100vh;
+    margin: auto;
+    font-size: 3vh;
+  }
+
+  .form-control3 {
+    width: 100vh;
     margin: auto;
   }
 }
@@ -174,18 +167,14 @@ body {
 (min-device-width: 641px) and (max-device-width: 767px)  {
 
   .form-control {
-    width: 100vh;
-    height: 10vh !important;
-    border-radius: 14px;   
+    width: 100vh; 
     margin: auto;
     font-size: 4vh;
     }
 
   .form-control2 {
     width: 100vh;
-    height: 20vh;
     margin: auto;
-    border-radius: 14px;
     font-size: 3vh;
   }
 
@@ -199,19 +188,14 @@ body {
 (min-device-width: 601px) and (max-device-width: 640px)  {
 
   .form-control {
-    width: 100vh;
-    height: 10vh !important;
-    border-radius: 14px;   
+    width: 90vh; 
     margin: auto;
     font-size: 4vh;
   }
 
   .form-control3 {
     width: 100vh;
-    height: 20vh;
     margin: auto;
-    border-radius: 14px;
-    font-size: 3vh;
   }
 }
 
@@ -219,18 +203,14 @@ body {
 (min-device-width: 500px) and (max-device-width: 600px)  {
 
   .form-control {
-    width: 46vh;
-    height: 10vh !important;
-    border-radius: 14px;   
+    width: 80vh;  
     margin: auto;
     font-size: 4vh;
-    }
+  }
 
   .form-control2 {
-    width: 56vh;
-    height: 20vh;
+    width: 80vh;
     margin: auto;
-    border-radius: 14px;
     font-size: 3vh;
   }
 
@@ -244,18 +224,14 @@ body {
 (min-device-width: 385px) and (max-device-width: 501px)  {
 
   .form-control {
-    width: 40vh;
-    height: 10vh !important;
-    border-radius: 14px;   
+    width: 70vh; 
     margin: auto;
     font-size: 4vh;
     }
 
   .form-control2 {
-    width: 40vh;
-    height: 20vh;
+    width: 70vh;
     margin: auto;
-    border-radius: 14px;
     font-size: 3vh;
   }
 
@@ -270,18 +246,14 @@ body {
 (min-device-width: 100px) and (max-device-width: 384px) {
 
   .form-control {
-    width: 40vh;
-    height: 8vh !important;
-    border-radius: 14px;   
+    width: 42vh;  
     margin: auto;
     font-size: 4vh;
     }
 
   .form-control2 {
     width: 42vh;
-    height: 20vh;
     margin: auto;
-    border-radius: 14px;
     font-size: 3vh;
   }
 

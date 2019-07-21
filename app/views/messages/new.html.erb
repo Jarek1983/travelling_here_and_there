@@ -1,4 +1,4 @@
-<section class="container-fluid pt-5 mx-auto text-center">
+<!-- <section class="container pt-5 mx-auto text-center col-12">
 
 	<%= render 'common/errors', model: @message %>
 
@@ -29,7 +29,44 @@
 
 	<% end %>
 
-</section>
+</section> -->
+
+<div class="container">
+  <%= form_for(@message) do |f| %>
+
+    <div class="row">
+      <div class="col-25">
+       	<%= f.label :Imię %>      
+       </div>
+      <div class="col-75">
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <%= f.label :Email %>
+      </div>
+      <div class="col-75">
+        <%= f.text_field :email %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <%= f.label :tekst %>
+      </div>
+      <div class="col-75">
+        <%= f.text_area :body, style:"height:200px" %>
+      </div>
+    </div>
+    <div class="row">
+      <%= f.submit "Wyślij" %>
+    </div>
+    <% end %>
+
+    <div class="pt-3 pb-2 captcha">
+			<%= recaptcha_tags %>
+	</div>
+</div>
 
 <%= render 'shared/opinion' %>
 
