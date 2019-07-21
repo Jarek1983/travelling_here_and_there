@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
 
     @comment.user = current_user
     if @comment.save
-      flash[:notice] = "You've successfuly add this comment"
+      flash[:notice] = "Utworzyłeś komentarz"
       redirect_to article_path(@article)
     else
       render 'articles/show'
@@ -21,20 +21,21 @@ class CommentsController < ApplicationController
 
     def update
         @comment = Comment.find(params[:id])
-        if @comment.update(comment_params)
-          flash[:notice] = "You update comment"
-          # redirect_to article_path(@article)
-          redirect_to article_path(params[:id])
-        else
-          # render 'edit'
-          redirect_to article_path(params[:id])
-        end
+        @comment.user = current_user
+          if @comment.update(comment_params)
+            flash[:notice] = "Komentarz został zaktualizowany"
+            # redirect_to article_path(@article)
+            redirect_to article_path(params[:id])
+          else
+            # render 'edit'
+            redirect_to article_path(params[:id])
+          end
     end
 
 	def destroy
        @comment = Comment.find(params[:id])
        @comment.destroy
-       flash[:alert] = "You delete comment"
+       flash[:alert] = "Komentarz został usunięty"
        redirect_to article_path(@article)
 	end
 

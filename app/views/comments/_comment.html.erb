@@ -8,17 +8,17 @@
     <%= comment.user.email %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Utworzono: </strong>
   <%= comment.created_at %>
-</p>
+</p> -->
 
-<%= link_to 'Usuń', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete, data: {confirm: 'Are you Certain?'}, class: "btn btn-danger" %>
-<%= link_to 'Edytuj', edit_article_comment_path(article_id: comment.article.id, id: comment.id), class: "btn btn-info" %>
+   	<% if comment.user == current_user || current_user&.admin? %>
+   	
+		<%= link_to 'Usuń', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete, data: {confirm: 'Czy na pewno?'}, class: "btn btn-lg btn-danger" %>
+		<%= link_to 'Edytuj', edit_article_comment_path(article_id: comment.article.id, id: comment.id), class: "btn btn-lg btn-info" %>
 
-<hr/>
-
-
+	<% end %>
 
 
 

@@ -1,44 +1,67 @@
-<section class="container-fluid pt-5">
-  <div class="row pt-5">
-      <div class="col-12 pt-5">
+<section class="container-fluid pt-5 text-center">
+  <div class="row">
+      <div class="col-12">
 
-          <p class="pt-5">
+          <p>
             <strong>Tytuł:</strong>
             <%= @article.title %>
           </p>
-
-          <p>
+<!--           <p>
             <strong>Utworzono: </strong>
             <%= @article.created_at.strftime('%A %-B %-d, %Y | %l:%M %p') %>
+          </p> -->
+
+          <p>
+            <% if @article.image.present? %>
+              <%= image_tag @article.image_url, class: "responsive_img" %>
+            <% else %>
+              No image
+            <% end %>
           </p>
+
+          <p>
+            <% if @article.image_second.present? %>
+              <%= image_tag @article.image_second_url, class: "responsive_img" %>
+            <% else %>
+              No image
+            <% end %>
+          </p>
+          <p>
+            <% if @article.image_third.present? %>
+              <%= image_tag @article.image_third_url, class: "responsive_img" %>
+            <% else %>
+              No image
+            <% end %>
+          </p>
+
+          <p>
+            <% if @article.image_fourth.present? %>
+              <%= image_tag @article.image_fourth_url, class: "responsive_img" %>
+            <% else %>
+              No image
+            <% end %>
+          </p>
+
+          <p>
+            <% if @article.image_fifth.present? %>
+              <%= image_tag @article.image_fifth_url, class: "responsive_img" %>
+            <% else %>
+              No image
+            <% end %>
+          </p>
+
+          <p>
+            <% if @article.image_sixth.present? %>
+              <%= image_tag @article.image_sixth_url, class: "responsive_img" %>
+            <% else %>
+              No image
+            <% end %>
+          </p>
+
 
           <p>
             <strong>Opis: </strong>
             <%=sanitize @article.text %>
-          </p>
-
-          <p>
-            <%= image_tag(@article.image_url) if @article.image?%>
-          </p>
-
-          <p>
-            <%= image_tag(@article.image_second_url) if @article.image_second?%>
-          </p>
-
-          <p>
-            <%= image_tag(@article.image_third_url) if @article.image_third?%>
-          </p>
-
-          <p>
-            <%= image_tag(@article.image_fourth_url) if @article.image_fourth?%>
-          </p>
-
-          <p>
-            <%= image_tag(@article.image_fifth_url) if @article.image_fifth?%>
-          </p>
-
-          <p>
-            <%= image_tag(@article.image_sixth_url) if @article.image_sixth?%>
           </p>
 
           <% if sponsored_article? @article %>
@@ -69,13 +92,13 @@
 
             <i class="fa fa-thumbs-down"></i>
 
-            <%= link_to "Nie lubię", article_like_path(@article, @like), method: :delete, class: "btn btn-info" %>
+            <%= link_to "Nie lubię", article_like_path(@article, @like), method: :delete, class: "btn btn-lg btn-info" %>
 
           <% else %>
 
             <i class="fa fa-thumbs-up"></i>
 
-            <%= link_to "Lubię", article_likes_path(@article), method: :post, class: "btn btn-info" %>
+            <%= link_to "Lubię", article_likes_path(@article), method: :post, class: "btn btn-lg btn-info" %>
 
           <% end %>
 
@@ -101,25 +124,21 @@
 
               <div>
 
-                <%= link_to 'Powrót', articles_path, class: "btn btn-primary" %>
+                <%= link_to 'Powrót', articles_path, class: "btn btn-lg btn-primary" %>
 
               <% if @article.user == current_user && current_user&.admin? %> 
 
-                <%= link_to 'Edytuj', edit_article_path(@article), class: "btn btn-info" %>
+                <%= link_to 'Edytuj', edit_article_path(@article), class: "btn btn-lg btn-info" %>
 
-              <% end %>
-
-
-              <% if @article.user == current_user && current_user&.admin? %> 
 
                 <%= link_to 'Usuń', article_path(@article), method: :delete, 
-                          data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+                          data: {confirm: 'Are you sure?'}, class: "btn btn-lg btn-danger" %>
 
               <% end %>
 
               <% if current_user&.admin? %>
 
-                <%= link_to @article.published? ? "Nie publikuj" : "Publikuj", toggle_visibility_article_path(@article), class: "btn btn-info" %>
+                <%= link_to @article.published? ? "Nie publikuj" : "Publikuj", toggle_visibility_article_path(@article), class: "btn btn-lg btn-info" %>
 
               <% end %>
 

@@ -38,15 +38,6 @@ body {
 }
 
 .form-control {
-    width: 100%;
-    height: 50px;
-    margin: auto;
-    border-radius: 8px;
-    background-color: #98DDDE;
-    font-size: 1.2rem;
-}
-
-.form-control2 {
     width: 50vh;
     height: 8vh;
     margin: auto;
@@ -55,7 +46,7 @@ body {
     text-align: center;
 }
 
-.form-control4 {
+.form-control2 {
     width: 100vh;
     height: 20vh;
     margin: auto;
@@ -95,33 +86,32 @@ body {
 @media only screen and (max-width: 1024px),
 (min-device-width: 1024px) and (max-device-width: 1024px) {
 
-  .form-control2 {
-      width: 64vh;
-      height: 8vh !important;
-      margin: auto;
-      border-radius: 14px;
-      font-size: 3vh;
+  .form-control {
+    width: 64vh;
+    height: 8vh !important;
+    margin: auto;
+    border-radius: 14px;
+    font-size: 3vh;
   }
 
-  .form-control4 {
+  .form-control2 {
     width: 64vh;
     height: 20vh;
     margin: auto;
     border-radius: 14px;
     font-size: 3vh;
-}
-
+  }
 }
 
 @media only screen and (max-width: 1023px),
 (min-device-width: 992px) and (max-device-width: 1023px) {
 
-  .form-control2 {
-      width: 66vh;
-      height: 12vh !important;
-      margin: auto;
-      border-radius: 14px;
-      font-size: 3vh;
+  .form-control {
+    width: 66vh;
+    height: 12vh !important;
+    margin: auto;
+    border-radius: 14px;
+    font-size: 3vh;
   }
 
   .form-control3 {
@@ -142,16 +132,24 @@ body {
 @media only screen and (max-width: 991px),
 (min-device-width: 769px) and (max-device-width: 991px) {
 
+  .form-control {
+    width: 56vh;
+    height: 10vh !important;
+    margin-left: -200px;
+    margin-right: -200px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 14px;
+    font-size: 4vh;
+  }
+
   .form-control2 {
-      width: 56vh;
-      height: 10vh !important;
-      margin-left: -200px;
-      margin-right: -200px;
-      margin-top: auto;
-      margin-bottom: auto;
-      border-radius: 14px;
-      font-size: 4vh;
-    }
+    width: 56vh;
+    height: 20vh;
+    margin: auto;
+    border-radius: 14px;
+    font-size: 3vh;
+  }
 
   .form-control3 {
       width: 400%;
@@ -162,14 +160,6 @@ body {
       text-align: center;
   }
 
-  .form-control4 {
-    width: 56vh;
-    height: 20vh;
-    margin: auto;
-    border-radius: 14px;
-    font-size: 3vh;
-}
-
   .image_welcome {
     width: 100%;
     }
@@ -178,7 +168,7 @@ body {
 @media only screen and (device-width: 768px) {
   /* For general iPad layouts */
 
-  .form-control2 {
+  .form-control {
       width: 62vh;
       height: 10vh !important;
       margin-left: -200px;
@@ -193,7 +183,7 @@ body {
 @media only screen and (max-width: 767px),
 (min-device-width: 641px) and (max-device-width: 767px)  {
 
-  .form-control2 {
+  .form-control {
     width: 100vh;
     height: 10vh !important;
     border-radius: 14px;   
@@ -204,6 +194,14 @@ body {
     font-size: 4vh;
     }
 
+  .form-control2 {
+    width: 100vh;
+    height: 20vh;
+    margin: auto;
+    border-radius: 14px;
+    font-size: 3vh;
+  }
+
     .form-control3 {
       width: 250%;
       height: 60px !important;
@@ -213,19 +211,13 @@ body {
       text-align: center;
   }
 
-  .form-control4 {
-    width: 100vh;
-    height: 20vh;
-    margin: auto;
-    border-radius: 14px;
-    font-size: 3vh;
-  }
+
 }
 
 @media only screen and (max-width: 640px),
 (min-device-width: 601px) and (max-device-width: 640px)  {
 
-  .form-control2 {
+  .form-control {
     width: 100vh;
     height: 10vh !important;
     border-radius: 14px;   
@@ -236,6 +228,14 @@ body {
     font-size: 4vh;
     }
 
+  .form-control4 {
+    width: 100vh;
+    height: 20vh;
+    margin: auto;
+    border-radius: 14px;
+    font-size: 3vh;
+  }
+
     .form-control3 {
       width: 250%;
       height: 60px !important;
@@ -245,19 +245,13 @@ body {
       text-align: center;
   }
 
-  .form-control4 {
-    width: 100vh;
-    height: 20vh;
-    margin: auto;
-    border-radius: 14px;
-    font-size: 3vh;
-}
+
 }
 
 @media only screen and (max-width: 600px),
 (min-device-width: 500px) and (max-device-width: 600px)  {
 
-  .form-control2 {
+  .form-control {
     width: 56vh;
     height: 10vh !important;
     border-radius: 14px;   
@@ -268,6 +262,14 @@ body {
     font-size: 4vh;
     }
 
+  .form-control2 {
+    width: 56vh;
+    height: 20vh;
+    margin: auto;
+    border-radius: 14px;
+    font-size: 3vh;
+  }
+
     .form-control3 {
       width: 250%;
       height: 60px !important;
@@ -277,19 +279,13 @@ body {
       text-align: center;
   }
 
-  .form-control4 {
-    width: 56vh;
-    height: 20vh;
-    margin: auto;
-    border-radius: 14px;
-    font-size: 3vh;
-}
+
 }
 
 @media only screen and (max-width: 501px),
 (min-device-width: 385px) and (max-device-width: 501px)  {
 
-  .form-control2 {
+  .form-control {
     width: 40vh;
     height: 10vh !important;
     border-radius: 14px;   
@@ -300,6 +296,14 @@ body {
     font-size: 4vh;
     }
 
+  .form-control2 {
+    width: 40vh;
+    height: 20vh;
+    margin: auto;
+    border-radius: 14px;
+    font-size: 3vh;
+  }
+
     .form-control3 {
       width: 250%;
       height: 60px !important;
@@ -308,19 +312,13 @@ body {
       font-size: 1.4rem;
       text-align: center;
   }
-  .form-control4 {
-    width: 40vh;
-    height: 20vh;
-    margin: auto;
-    border-radius: 14px;
-    font-size: 3vh;
-}
+
 }
 
 @media only screen and (max-width: 384px),
-(min-device-width: 100px) and (max-device-width: 384px)  {
+(min-device-width: 100px) and (max-device-width: 384px) {
 
-  .form-control2 {
+  .form-control {
     width: 42vh;
     height: 8vh !important;
     border-radius: 14px;   
@@ -331,6 +329,14 @@ body {
     font-size: 4vh;
     }
 
+  .form-control4 {
+    width: 42vh;
+    height: 20vh;
+    margin: auto;
+    border-radius: 14px;
+    font-size: 3vh;
+  }
+
     .form-control3 {
       width: 250%;
       height: 60px !important;
@@ -338,14 +344,6 @@ body {
       border-radius: 10px;
       font-size: 1.4rem;
       text-align: center;
-  }
-
-  .form-control4 {
-    width: 42vh;
-    height: 20vh;
-    margin: auto;
-    border-radius: 14px;
-    font-size: 3vh;
   }
 }
 
