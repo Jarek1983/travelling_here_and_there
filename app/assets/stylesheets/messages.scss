@@ -7,6 +7,13 @@
 		padding-left: 550px;
 	}
 
+@media only screen and (max-width: 1366px),
+(min-device-width: 1366px) and (max-device-width: 1366px) {
+	.captcha {
+		padding-left: 520px;
+	}
+}
+
 @media only screen and (max-width: 1300px),
 (min-device-width: 1200px) and (max-device-width: 1300px) {
 	.captcha {

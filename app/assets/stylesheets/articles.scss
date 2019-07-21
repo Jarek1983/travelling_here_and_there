@@ -1,4 +1,34 @@
 .responsive_img {
-	width:100%; 
+	width:90%; 
+	height:80vh;
 	object-fit:cover;
+}
+
+@media only screen and (max-width: 1199px),
+(min-device-width: 992px) and (max-device-width: 1199px) {
+	.responsive_img {
+		width:100%; 
+		height:80vh;
+	}
+}
+
+@media only screen and (max-width: 991px),
+(min-device-width: 768px) and (max-device-width: 991px) {
+	.responsive_img { 
+		height: 70vh;
+	}
+}
+
+@media only screen and (max-width: 767px),
+(min-device-width: 601px) and (max-device-width: 767px) {
+	.responsive_img {
+		height:90vh;
+	}
+}
+
+@media only screen and (max-width: 600px),
+(min-device-width: 100px) and (max-device-width: 600px) {
+	.responsive_img {
+		height:60vh;
+	}
 }

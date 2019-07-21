@@ -1,7 +1,7 @@
-<p>
+<!-- <p>
   <strong>Komentarz: </strong>
     <%= simple_format(comment.body) %>
-</p>
+</p> -->
 
 <p>
   <strong>Autor: </strong>
@@ -15,8 +15,8 @@
 
    	<% if comment.user == current_user || current_user&.admin? %>
    	
-		<%= link_to 'Usuń', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete, data: {confirm: 'Czy na pewno?'}, class: "btn btn-lg btn-danger" %>
-		<%= link_to 'Edytuj', edit_article_comment_path(article_id: comment.article.id, id: comment.id), class: "btn btn-lg btn-info" %>
+		<%= link_to 'Usuń', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete, data: {confirm: 'Czy na pewno?'}, class: "btn btn-lg btn-danger new_submit" %>
+		<%= link_to 'Edytuj', edit_article_comment_path(article_id: comment.article.id, id: comment.id), class: "btn btn-lg btn-info new_submit" %>
 
 	<% end %>
 

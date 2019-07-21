@@ -38,7 +38,7 @@ body {
 }
 
 .form-control {
-    width: 50vh;
+    width: 60vh;
     height: 8vh;
     margin: auto;
     border-radius: 14px;
@@ -54,14 +54,13 @@ body {
     font-size: 3vh;
 }
 
-.form-control3 {
-    width: 100%;
-    height: 50px;
+.form-control4 {
+    width: 80vh;
     margin: auto;
-    border-radius: 10px;
-    font-size: 1.2rem;
+    border-radius: 20px;
+    font-size: 3vh;
     text-align: center;
-}
+  }
 
 .image_welcome {
     width: 75%;
@@ -82,6 +81,10 @@ body {
   text-align: center;
   color: RGB(47, 79, 79);
 }
+
+  
+
+
 
 @media only screen and (max-width: 1024px),
 (min-device-width: 1024px) and (max-device-width: 1024px) {
@@ -114,15 +117,6 @@ body {
     font-size: 3vh;
   }
 
-  .form-control3 {
-      width: 100%;
-      height: 60px !important;
-      margin: auto;
-      border-radius: 10px;
-      font-size: 1.4rem;
-      text-align: center;
-  }
-
   .image_welcome {
     width: 80%;
   }
@@ -133,12 +127,9 @@ body {
 (min-device-width: 769px) and (max-device-width: 991px) {
 
   .form-control {
-    width: 56vh;
+    width: 46vh;
     height: 10vh !important;
-    margin-left: -200px;
-    margin-right: -200px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
     border-radius: 14px;
     font-size: 4vh;
   }
@@ -152,12 +143,8 @@ body {
   }
 
   .form-control3 {
-      width: 400%;
-      height: 60px !important;
-      margin: auto;
-      border-radius: 10px;
-      font-size: 1.4rem;
-      text-align: center;
+    width: 40vh;
+    margin: auto;
   }
 
   .image_welcome {
@@ -171,13 +158,15 @@ body {
   .form-control {
       width: 62vh;
       height: 10vh !important;
-      margin-left: -200px;
-      margin-right: -200px;
-      margin-top: auto;
-      margin-bottom: auto;
+      margin: auto;
       border-radius: 14px;
       font-size: 4vh;
     }
+
+  .form-control4 {
+    width: 40vh;
+    margin: auto;
+  }
 }
 
 @media only screen and (max-width: 767px),
@@ -187,10 +176,7 @@ body {
     width: 100vh;
     height: 10vh !important;
     border-radius: 14px;   
-    margin-left: -200px;
-    margin-right: -200px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
     font-size: 4vh;
     }
 
@@ -202,16 +188,10 @@ body {
     font-size: 3vh;
   }
 
-    .form-control3 {
-      width: 250%;
-      height: 60px !important;
-      margin: auto;
-      border-radius: 10px;
-      font-size: 1.4rem;
-      text-align: center;
+  .form-control3 {
+    width: 80vh;
+    margin: auto;
   }
-
-
 }
 
 @media only screen and (max-width: 640px),
@@ -221,44 +201,27 @@ body {
     width: 100vh;
     height: 10vh !important;
     border-radius: 14px;   
-    margin-left: -200px;
-    margin-right: -200px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
     font-size: 4vh;
-    }
+  }
 
-  .form-control4 {
+  .form-control3 {
     width: 100vh;
     height: 20vh;
     margin: auto;
     border-radius: 14px;
     font-size: 3vh;
   }
-
-    .form-control3 {
-      width: 250%;
-      height: 60px !important;
-      margin: auto;
-      border-radius: 10px;
-      font-size: 1.4rem;
-      text-align: center;
-  }
-
-
 }
 
 @media only screen and (max-width: 600px),
 (min-device-width: 500px) and (max-device-width: 600px)  {
 
   .form-control {
-    width: 56vh;
+    width: 46vh;
     height: 10vh !important;
     border-radius: 14px;   
-    margin-left: -200px;
-    margin-right: -200px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
     font-size: 4vh;
     }
 
@@ -270,16 +233,10 @@ body {
     font-size: 3vh;
   }
 
-    .form-control3 {
-      width: 250%;
-      height: 60px !important;
-      margin: auto;
-      border-radius: 10px;
-      font-size: 1.4rem;
-      text-align: center;
+  .form-control3 {
+    width: 40vh;
+    margin: auto;
   }
-
-
 }
 
 @media only screen and (max-width: 501px),
@@ -289,10 +246,7 @@ body {
     width: 40vh;
     height: 10vh !important;
     border-radius: 14px;   
-    margin-left: -200px;
-    margin-right: -200px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
     font-size: 4vh;
     }
 
@@ -304,13 +258,9 @@ body {
     font-size: 3vh;
   }
 
-    .form-control3 {
-      width: 250%;
-      height: 60px !important;
-      margin: auto;
-      border-radius: 10px;
-      font-size: 1.4rem;
-      text-align: center;
+  .form-control3 {
+    width: 40vh;
+    margin: auto;
   }
 
 }
@@ -319,17 +269,14 @@ body {
 (min-device-width: 100px) and (max-device-width: 384px) {
 
   .form-control {
-    width: 42vh;
+    width: 40vh;
     height: 8vh !important;
     border-radius: 14px;   
-    margin-left: -200px;
-    margin-right: -200px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
     font-size: 4vh;
     }
 
-  .form-control4 {
+  .form-control2 {
     width: 42vh;
     height: 20vh;
     margin: auto;
@@ -337,28 +284,18 @@ body {
     font-size: 3vh;
   }
 
-    .form-control3 {
-      width: 250%;
-      height: 60px !important;
-      margin: auto;
-      border-radius: 10px;
-      font-size: 1.4rem;
-      text-align: center;
+  .form-control3 {
+    width: 36vh;
+    margin: auto;
   }
 }
-
-
-
-
 
 
 /*buttons */
     @media only screen and (min-width: 1200px) {
       
       .new_submit {
-        width: 26vh;
-        height: 6vh;
-        font-size: 3vh;
+        width: 20vh;
       }
     }
 
@@ -369,7 +306,7 @@ body {
       .new_submit {
         width: 24vh;
         height: 6vh;
-        font-size: 3vh;
+        font-size: 2.8vh;
   }
     }
 
@@ -389,7 +326,7 @@ body {
 
       .new_submit {
         width: 25vh;
-        height: 6vh;
+        height: 8vh;
         font-size: 3vh;
       }
     }
@@ -408,7 +345,7 @@ body {
     (min-device-width: 100px) and (max-device-width: 500px) {
 
       .new_submit {
-        width: 20vh;
+        width: 16vh;
         height: 4vh;
         font-size: 2vh;
       }

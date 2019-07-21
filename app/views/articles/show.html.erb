@@ -2,10 +2,11 @@
   <div class="row">
       <div class="col-12">
 
-          <p>
-            <strong>Tytuł:</strong>
+          <h1>
+          
             <%= @article.title %>
-          </p>
+
+          </h1>
 <!--           <p>
             <strong>Utworzono: </strong>
             <%= @article.created_at.strftime('%A %-B %-d, %Y | %l:%M %p') %>
@@ -26,6 +27,7 @@
               No image
             <% end %>
           </p>
+
           <p>
             <% if @article.image_third.present? %>
               <%= image_tag @article.image_third_url, class: "responsive_img" %>
@@ -40,7 +42,7 @@
             <% else %>
               No image
             <% end %>
-          </p>
+          </p>        
 
           <p>
             <% if @article.image_fifth.present? %>
@@ -58,24 +60,23 @@
             <% end %>
           </p>
 
-
           <p>
-            <strong>Opis: </strong>
+
             <%=sanitize @article.text %>
+            
           </p>
+
+          <h4>autor:
+
+              <%= @article.user.email %>
+
+          </h4>
 
           <% if sponsored_article? @article %>
 
             <h3>Artykuł sponsorowany przez firmę <%= @article.company.name %></h3>
 
           <% end %>
-
-
-          <p><strong>Autor: </strong>
-
-              <%= @article.user.email %>
-
-          </p>
 
           <p><strong>Tags:</strong>
 
@@ -86,22 +87,48 @@
 
           </p>
 
-          <%= pluralize(@article.likes_count, 'person')%> lubi ten artykuł
+          <p>
+
+            <%= pluralize(@article.likes_count, 'person')%> lubi ten artykuł
+
+          </p>
 
           <% if @like.persisted? %>
 
             <i class="fa fa-thumbs-down"></i>
 
-            <%= link_to "Nie lubię", article_like_path(@article, @like), method: :delete, class: "btn btn-lg btn-info" %>
+            <%= link_to "Nie lubię", article_like_path(@article, @like), method: :delete, class: "btn btn-lg btn-info new_submit" %>
 
           <% else %>
 
-            <i class="fa fa-thumbs-up"></i>
+            <i class="fa fa-thumbs-up" style="font-size:32px"></i>
 
-            <%= link_to "Lubię", article_likes_path(@article), method: :post, class: "btn btn-lg btn-info" %>
+            <%= link_to "Lubię", article_likes_path(@article), method: :post, class: "btn btn-lg btn-info new_submit" %>
 
           <% end %>
 
+   <!--        <div class="pt-3">
+
+            <%= link_to 'Powrót', articles_path, class: "btn btn-lg btn-primary" %>
+
+            <% if @article.user == current_user && current_user&.admin? %> 
+
+              <%= link_to 'Edytuj', edit_article_path(@article), class: "btn btn-lg btn-info" %>
+
+
+              <%= link_to 'Usuń', article_path(@article), method: :delete, 
+                          data: {confirm: 'Are you sure?'}, class: "btn btn-lg btn-danger" %>
+
+            <% end %>
+
+            <% if current_user&.admin? %>
+
+              <%= link_to @article.published? ? "Nie publikuj" : "Publikuj", toggle_visibility_article_path(@article), class: "btn btn-lg btn-info" %>
+
+            <% end %>
+
+          </div>
+ -->
 
           <% if sponsored_article? @article %>
             
@@ -109,11 +136,14 @@
             
           <% else %>
 
-            <h2>Komentarze</h2>
+            <h2 class="pt-2">Komentarze</h2>
 
-              <button onclick="show_hide()">Pokaż/Ukryj</button><hr>
-            
+              <button class="btn btn-primary new_submit" onclick="show_hide()">Pokaż/Ukryj</button>
+
+              <p class="pt-3">Autorzy bloga nie ponoszą odpowiedzialności za treści opublikowane przez użytkowników. Celem wystawiania komentarzy jest wolna wymiana myśli, swoich spostrzeżeń, opinii i sugestii. Użytkownik publikuje swoje komentarze na własną odpowiedzialność, tym samym ponosi wyłączną odpowiedzialność karną i cywilną za umieszczone treści swoich wypowiedzi.Autorzy bloga nie ponoszą odpowiedzialności za treści opublikowane przez użytkowników. Celem wystawiania komentarzy jest</p>
+
               <div id="hide">
+
                 <%= render @article.comments.includes(:user) %>
 
                 <%= render '/comments/form' %>
@@ -122,28 +152,7 @@
 
           <% end %>
 
-              <div>
-
-                <%= link_to 'Powrót', articles_path, class: "btn btn-lg btn-primary" %>
-
-              <% if @article.user == current_user && current_user&.admin? %> 
-
-                <%= link_to 'Edytuj', edit_article_path(@article), class: "btn btn-lg btn-info" %>
-
-
-                <%= link_to 'Usuń', article_path(@article), method: :delete, 
-                          data: {confirm: 'Are you sure?'}, class: "btn btn-lg btn-danger" %>
-
-              <% end %>
-
-              <% if current_user&.admin? %>
-
-                <%= link_to @article.published? ? "Nie publikuj" : "Publikuj", toggle_visibility_article_path(@article), class: "btn btn-lg btn-info" %>
-
-              <% end %>
-
-            </div>
-
+ 
       </div>
   </div>
 </section>

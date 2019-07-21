@@ -3,7 +3,7 @@
 	<%= render 'common/errors', model: @article %>
 
 		 <%= simple_form_for @article do |f| %>
-		    <%= f.input :title, label: 'Miasto:', input_html: { class: 'form-control3' } %>
+		    <%= f.input :title, label: 'Miasto:', input_html: { class: 'form-control3'} %>
 		    <%= f.input :text, label: 'Wpisz tekst:', as: :trix_editor %>
 		    <%= f.input :tags, label: 'Wskaż tags:', input_html: { class: 'form-control3'} %> 
 	    	<%= f.input :image, label: "Zdjęcie" %>
@@ -12,8 +12,8 @@
 	    	<%= f.input :image_fourth, label: "Zdjęcie" %>
 	    	<%= f.input :image_fifth, label: "Zdjęcie" %>
 	    	<%= f.input :image_sixth, label: "Zdjęcie" %>
-		    <%= link_to 'Powrót', articles_path, class: 'btn btn-sd btn-info' %>
-		    <%= f.submit "Zapisz", class: 'btn btn-success' %>
+		    <%= link_to 'Powrót', articles_path, class: 'btn btn-lg btn-info new_submit' %><hr>
+		    <%= f.submit "Zapisz", class: 'btn btn-lg btn-success new_submit' %>
 
 		<% end %>
 </section>
