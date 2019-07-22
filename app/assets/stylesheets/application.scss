@@ -63,13 +63,19 @@ body {
 }
 
 .new_submit {
-    width: 32vh;
+    width: 24vh;
 }
 
 /*button for messages/new */
 
 .new_submit2 {
     width: 28vh !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .new_submit {
+    width: 32vh;
+  }
 }
 
 @media only screen and (max-width: 1023px),
