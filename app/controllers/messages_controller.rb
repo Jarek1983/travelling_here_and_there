@@ -11,7 +11,8 @@ class MessagesController < ApplicationController
 	def create
 		@message = Message.new(message_params)
 	      
-		if verify_recaptcha(model: @message) && @message.save
+		# if verify_recaptcha(model: @message) && @message.save
+		if @message.save
 			MessageMailer.with(message: @message).welcome_email.deliver_now
 			flash[:notice] = "Wysłałeś wiadomość"
 			redirect_to root_path
