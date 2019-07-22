@@ -27,52 +27,5 @@
   padding: 0 1rem;
 }
 
-@media only screen and (max-width: 1199px),
-(min-device-width: 992px) and (max-device-width: 1199px) {
-
-  h1 {
-    font-size: 3vh;
-  }
-
-  h2, h5, p, h3 {
-    font-size: 2vh;
-  }
-}
-
-@media only screen and (max-width: 991px),
-(min-device-width: 768px) and (max-device-width: 991px) {
-
-  h1 {
-    font-size: 4vh;
-  }
-
-  h2, h5, p, h3 {
-    font-size: 2.2vh;
-  }
-}
-
-@media only screen and (max-width: 767px),
-(min-device-width: 501px) and (max-device-width: 767px) {
-
-  h1 {
-    font-size: 5vh;
-  }
-
-  h2, h5, p, h3, h1 {
-    font-size: 3vh;
-  }
-}
-
-@media only screen and (max-width: 501px),
-(min-device-width: 100px) and (max-device-width: 501px) {
-
-  h1 {
-    font-size: 4vh;
-  }
-
-  h2, h5, p, h3 {
-    font-size: 2.4vh;
-  }
-}
 
 

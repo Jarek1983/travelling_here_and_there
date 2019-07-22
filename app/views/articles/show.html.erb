@@ -1,68 +1,59 @@
-<section class="container-fluid pt-5 text-center">
+<section class="container-fluid pt-5">
   <div class="row">
       <div class="col-12">
 
-          <h1>
+          <h1 class="text-center">
           
             <%=sanitize @article.title %>
 
           </h1>
+          
+      <div class="text-center">
 
           <p>
             <% if @article.image.present? %>
               <%= image_tag @article.image_url, class: "responsive_img" %>
-            <% else %>
-              No image
             <% end %>
           </p>
 
           <p>
             <% if @article.image_second.present? %>
               <%= image_tag @article.image_second_url, class: "responsive_img" %>
-            <% else %>
-              No image
             <% end %>
           </p>
 
           <p>
             <% if @article.image_third.present? %>
               <%= image_tag @article.image_third_url, class: "responsive_img" %>
-            <% else %>
-              No image
             <% end %>
           </p>
 
           <p>
             <% if @article.image_fourth.present? %>
               <%= image_tag @article.image_fourth_url, class: "responsive_img" %>
-            <% else %>
-              No image
             <% end %>
           </p>        
 
           <p>
             <% if @article.image_fifth.present? %>
               <%= image_tag @article.image_fifth_url, class: "responsive_img" %>
-            <% else %>
-              No image
             <% end %>
           </p>
 
           <p>
             <% if @article.image_sixth.present? %>
               <%= image_tag @article.image_sixth_url, class: "responsive_img" %>
-            <% else %>
-              No image
             <% end %>
           </p>
 
-          <p>
+        </div>
+          <p class="text-justify">
 
             <%=sanitize @article.text %>
             
           </p>
 
-          <h4>autor:
+          <h4 class="text-center">autor:
 
               <%= @article.user.email %>
 
@@ -74,7 +65,7 @@
 
           <% end %>
 
-          <p><strong>Tags:</strong>
+          <p class="text-center"><strong>Tags:</strong>
 
             <% @article.tags.each do |t| %>
             <%=link_to t, articles_path(q: t), class: "badge badge-dark"%>
@@ -83,7 +74,7 @@
 
           </p>
 
-          <p>
+          <p class="text-center">
 
             <%= pluralize(@article.likes_count, 'person')%> lubi ten artykuł
 
@@ -91,17 +82,25 @@
 
           <% if @like.persisted? %>
 
-            <i class="fa fa-thumbs-down"></i>
+            <div class="text-center">
 
-            <%= link_to "Nie lubię", article_like_path(@article, @like), method: :delete, class: "btn btn-lg btn-info new_submit" %>
+              <i class="fa fa-thumbs-down"></i>
+
+              <%= link_to "Nie lubię", article_like_path(@article, @like), method: :delete, class: "btn btn-lg btn-info new_submit" %>
+
+            </div>
 
           <% else %>
 
-            <i class="fa fa-thumbs-up" style="font-size:32px"></i>
+            <div class="text-center">
+            
+              <i class="fa fa-thumbs-up" style="font-size:32px"></i>
 
-            <%= link_to "Lubię", article_likes_path(@article), method: :post, class: "btn btn-lg btn-info new_submit" %>
+              <%= link_to "Lubię", article_likes_path(@article), method: :post, class: "btn btn-lg btn-info new_submit" %>
 
           <% end %>
+
+            </div>
 
    <!--        <div class="pt-3">
 
@@ -132,11 +131,15 @@
             
           <% else %>
 
-            <h2 class="pt-2">Komentarze</h2>
+            <h2 class="pt-2 text-center">Komentarze</h2>
 
-              <button class="btn btn-primary new_submit" onclick="show_hide()">Pokaż/Ukryj</button>
+              <div class="text-center">
 
-              <p class="pt-3">Autorzy bloga nie ponoszą odpowiedzialności za treści opublikowane przez użytkowników. Celem wystawiania komentarzy jest wolna wymiana myśli, swoich spostrzeżeń, opinii i sugestii. Użytkownik publikuje swoje komentarze na własną odpowiedzialność, tym samym ponosi wyłączną odpowiedzialność karną i cywilną za umieszczone treści swoich wypowiedzi.Autorzy bloga nie ponoszą odpowiedzialności za treści opublikowane przez użytkowników. Celem wystawiania komentarzy jest</p>
+                <button class="btn btn-primary new_submit" onclick="show_hide()">Pokaż/Ukryj</button>
+
+              </div>
+
+              <p class="pt-3 text-justify">Autorzy bloga nie ponoszą odpowiedzialności za treści opublikowane przez użytkowników. Celem wystawiania komentarzy jest wolna wymiana myśli, swoich spostrzeżeń, opinii i sugestii. Użytkownik publikuje swoje komentarze na własną odpowiedzialność, tym samym ponosi wyłączną odpowiedzialność karną i cywilną za umieszczone treści swoich wypowiedzi.Autorzy bloga nie ponoszą odpowiedzialności za treści opublikowane przez użytkowników. Celem wystawiania komentarzy jest</p>
 
               <div id="hide">
 

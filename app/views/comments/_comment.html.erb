@@ -1,19 +1,23 @@
-<p>
-  <strong>Komentarz: </strong>
-    <%= simple_format(comment.body) %>
-</p>
+<div class="text-center">
 
-<p>
-  <strong>Autor: </strong>
-    <%= comment.user.email %>
-</p>
+	<p>
+	  <strong>Komentarz: </strong>
+	    <%= simple_format(comment.body) %>
+	</p>
 
-   	<% if comment.user == current_user || current_user&.admin? %>
-   	
-		<%= link_to 'Usuń', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete, data: {confirm: 'Czy na pewno?'}, class: "btn btn-lg btn-danger new_submit" %>
-		<%= link_to 'Edytuj', edit_article_comment_path(article_id: comment.article.id, id: comment.id), class: "btn btn-lg btn-info new_submit" %>
+	<p class="pb-2">
+	  <strong>Autor: </strong>
+	    <%= comment.user.email %>
+	</p>
 
-	<% end %>
+	   	<% if comment.user == current_user || current_user&.admin? %>
+	   	
+			<%= link_to 'Usuń', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete, data: {confirm: 'Czy na pewno?'}, class: "btn btn-lg btn-danger new_submit" %>
+			<%= link_to 'Edytuj', edit_article_comment_path(article_id: comment.article.id, id: comment.id), class: "btn btn-lg btn-info new_submit" %>
+
+		<% end %>
+
+</div>
 
 
 

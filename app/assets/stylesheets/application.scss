@@ -62,6 +62,11 @@ body {
   color: RGB(47, 79, 79);
 }
 
+.new_submit {
+    width: 22vh;
+    height: 8vh;
+    font-size: 3vh;
+}
 
 @media only screen and (max-width: 1023px),
 (min-device-width: 992px) and (max-device-width: 1023px) {
@@ -78,69 +83,8 @@ body {
     width: 100%;
     }
 }
-
-
-/*buttons */
-    @media only screen and (min-width: 1200px) {
       
-      .new_submit {
-        width: 24vh;
-        height: 8vh;
-        font-size: 3vh;
-        background-color: #0f5b94 !important;
-      }
-    }
 
 
-    @media only screen and (max-width: 1199px),
-    (min-device-width: 992px) and (max-device-width: 1199px) {
-
-      .new_submit {
-        width: 20vh;
-        height: 8vh;
-        font-size: 3vh;
-  }
-    }
-
-    @media only screen and (max-width: 991px),
-    (min-device-width: 768px) and (max-device-width: 991px) {
-
-      .new_submit {
-        width: 20vh;
-        height: 8vh;
-        font-size: 3vh;
-        }
-
-    }
-
-    @media only screen and (max-width: 767px),
-    (min-device-width: 601px) and (max-device-width: 767px) {
-
-      .new_submit {
-        width: 20vh;
-        height: 8vh;
-        font-size: 3vh;
-      }
-    }
-
-    @media only screen and (max-width: 600px),
-    (min-device-width: 501px) and (max-device-width: 600px) {
-
-      .new_submit {
-        width: 20vh;
-        height: 8vh;
-        font-size: 3vh;
-      }
-    }
-
-    @media only screen and (max-width: 500px),
-    (min-device-width: 100px) and (max-device-width: 500px) {
-
-      .new_submit {
-        width: 20vh;
-        height: 8vh;
-        font-size: 3vh;
-      }
-    }
 
 

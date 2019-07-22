@@ -66,4 +66,16 @@ input[type=submit] {
     width: 100%;
     margin-top: 0;
   }
+
+  input[type=text], select, textarea{
+    width: 80%;
+    display:table;
+    margin: auto;
+  }
+
+  input[type=submit] {
+    width: 80%;
+    display:table;
+    margin: auto;
+  }
 }

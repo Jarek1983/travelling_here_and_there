@@ -1,4 +1,4 @@
-<div class="container pt-5">
+<div class="container pt-5 text-center">
   <%= form_for(@message) do |f| %>
 
     <div class="row">
@@ -21,12 +21,12 @@
       <div class="col-25">
         <%= f.label :tekst %>
       </div>
-      <div class="col-75">
+      <div class="col-75 pb-2">
         <%= f.text_area :body, style:"height:200px" %>
       </div>
     </div>
     <div class="row">
-      <%= f.submit "Wyślij" %>
+      <%= f.submit "Wyślij", class: 'btn btn-primary new_submit' %>
     </div>
     <% end %>
 
