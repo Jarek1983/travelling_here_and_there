@@ -28,4 +28,3 @@
 public/uploads/
 .env
 /config/initializers/recaptcha.rb
-/config/environments
