@@ -23,13 +23,13 @@
  @import "about";
  @import "messages";
 
-html {height: 100%;}
+html {height: 120%;}
 
 body {
     width: 100%;
     min-height: 100%; 
     position: relative; 
-    padding-bottom: [footer-height];
+   
     background: linear-gradient(rgba(139,69,19,0.6),rgba(139,69,19,0.6));
     background-attachment: fixed;
     background-position: center;
