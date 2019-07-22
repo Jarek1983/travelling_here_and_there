@@ -5,7 +5,7 @@
 
             <% if current_user && current_user&.admin? %>
 
-            <%= link_to 'Nowy artykuł', new_article_path, class: "btn btn-primary new_submit" %> <hr/>
+            <%= link_to 'Dodaj', new_article_path, class: "btn btn-primary new_submit" %> <hr/>
 
             <% end %>
 
@@ -30,7 +30,7 @@
                           </div>
                           <div class="card-block text-center">
                                <h4 class="card-title text-center text-capitalize">
-                                  <%= article.title %>
+                                  <%=sanitize article.title %>
                                </h4>
 
                                 <h4 class="text-capitalize"> 

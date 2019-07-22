@@ -1,17 +1,12 @@
-<!-- <p>
+<p>
   <strong>Komentarz: </strong>
     <%= simple_format(comment.body) %>
-</p> -->
+</p>
 
 <p>
   <strong>Autor: </strong>
     <%= comment.user.email %>
 </p>
-
-<!-- <p>
-  <strong>Utworzono: </strong>
-  <%= comment.created_at %>
-</p> -->
 
    	<% if comment.user == current_user || current_user&.admin? %>
    	

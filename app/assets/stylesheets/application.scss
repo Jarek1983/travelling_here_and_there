@@ -39,29 +39,8 @@ body {
 }
 
 .form-control {
-    width: 100vh;
-    height: 10vh;
-    margin: auto;
-    border-radius: 20px;
-    font-size: 3vh;
-    text-align: center;
+  border-radius: 12px;
 }
-
-.form-control2 {
-    width: 100vh;
-    height: 20vh;
-    margin: auto;
-    border-radius: 20px;
-    font-size: 3vh;
-}
-
-.form-control4 {
-    width: 80vh;
-    margin: auto;
-    border-radius: 20px;
-    font-size: 3vh;
-    text-align: center;
-  }
 
 .image_welcome {
     width: 75%;
@@ -83,184 +62,21 @@ body {
   color: RGB(47, 79, 79);
 }
 
-@media only screen and (max-width: 1024px),
-(min-device-width: 1024px) and (max-device-width: 1024px) {
-
-  .form-control {
-    width: 100vh;
-    margin: auto;
-    font-size: 3vh;
-  }
-
-  .form-control2 {
-    width: 100vh;
-    margin: auto;
-    font-size: 3vh;
-  }
-}
 
 @media only screen and (max-width: 1023px),
 (min-device-width: 992px) and (max-device-width: 1023px) {
-
-  .form-control {
-    width: 100vh;
-    margin: auto;
-    font-size: 3vh;
-  }
 
   .image_welcome {
     width: 80%;
   }
 }
 
-
 @media only screen and (max-width: 991px),
 (min-device-width: 769px) and (max-device-width: 991px) {
-
-  .form-control {
-    width: 100vh;
-    margin: auto;
-    border-radius: 14px;
-    font-size: 4vh;
-  }
-
-  .form-control2 {
-    width: 100vh;
-    margin: auto;
-    font-size: 3vh;
-  }
-
-  .form-control3 {
-    width: 100vh;
-    margin: auto;
-  }
 
   .image_welcome {
     width: 100%;
     }
-}
-
-@media only screen and (device-width: 768px) {
-  /* For general iPad layouts */
-
-  .form-control {
-      width: 100vh;
-      height: 10vh !important;
-      margin: auto;
-      border-radius: 14px;
-      font-size: 4vh;
-    }
-
-  .form-control2 {
-    width: 100vh;
-    margin: auto;
-    font-size: 3vh;
-  }
-
-  .form-control3 {
-    width: 100vh;
-    margin: auto;
-  }
-}
-
-@media only screen and (max-width: 767px),
-(min-device-width: 641px) and (max-device-width: 767px)  {
-
-  .form-control {
-    width: 100vh; 
-    margin: auto;
-    font-size: 4vh;
-    }
-
-  .form-control2 {
-    width: 100vh;
-    margin: auto;
-    font-size: 3vh;
-  }
-
-  .form-control3 {
-    width: 80vh;
-    margin: auto;
-  }
-}
-
-@media only screen and (max-width: 640px),
-(min-device-width: 601px) and (max-device-width: 640px)  {
-
-  .form-control {
-    width: 90vh; 
-    margin: auto;
-    font-size: 4vh;
-  }
-
-  .form-control3 {
-    width: 100vh;
-    margin: auto;
-  }
-}
-
-@media only screen and (max-width: 600px),
-(min-device-width: 500px) and (max-device-width: 600px)  {
-
-  .form-control {
-    width: 80vh;  
-    margin: auto;
-    font-size: 4vh;
-  }
-
-  .form-control2 {
-    width: 80vh;
-    margin: auto;
-    font-size: 3vh;
-  }
-
-  .form-control3 {
-    width: 40vh;
-    margin: auto;
-  }
-}
-
-@media only screen and (max-width: 501px),
-(min-device-width: 385px) and (max-device-width: 501px)  {
-
-  .form-control {
-    width: 70vh; 
-    margin: auto;
-    font-size: 4vh;
-    }
-
-  .form-control2 {
-    width: 70vh;
-    margin: auto;
-    font-size: 3vh;
-  }
-
-  .form-control3 {
-    width: 40vh;
-    margin: auto;
-  }
-
-}
-
-@media only screen and (max-width: 384px),
-(min-device-width: 100px) and (max-device-width: 384px) {
-
-  .form-control {
-    width: 42vh;  
-    margin: auto;
-    font-size: 4vh;
-    }
-
-  .form-control2 {
-    width: 42vh;
-    margin: auto;
-    font-size: 3vh;
-  }
-
-  .form-control3 {
-    width: 36vh;
-    margin: auto;
-  }
 }
 
 
@@ -268,7 +84,10 @@ body {
     @media only screen and (min-width: 1200px) {
       
       .new_submit {
-        width: 20vh;
+        width: 24vh;
+        height: 8vh;
+        font-size: 3vh;
+        background-color: #0f5b94 !important;
       }
     }
 
@@ -277,9 +96,9 @@ body {
     (min-device-width: 992px) and (max-device-width: 1199px) {
 
       .new_submit {
-        width: 24vh;
-        height: 6vh;
-        font-size: 2.8vh;
+        width: 20vh;
+        height: 8vh;
+        font-size: 3vh;
   }
     }
 
@@ -288,7 +107,7 @@ body {
 
       .new_submit {
         width: 20vh;
-        height: 6vh;
+        height: 8vh;
         font-size: 3vh;
         }
 
@@ -298,7 +117,7 @@ body {
     (min-device-width: 601px) and (max-device-width: 767px) {
 
       .new_submit {
-        width: 25vh;
+        width: 20vh;
         height: 8vh;
         font-size: 3vh;
       }
@@ -309,7 +128,7 @@ body {
 
       .new_submit {
         width: 20vh;
-        height: 5vh;
+        height: 8vh;
         font-size: 3vh;
       }
     }
@@ -318,9 +137,9 @@ body {
     (min-device-width: 100px) and (max-device-width: 500px) {
 
       .new_submit {
-        width: 16vh;
-        height: 4vh;
-        font-size: 2vh;
+        width: 20vh;
+        height: 8vh;
+        font-size: 3vh;
       }
     }
 
