@@ -39,6 +39,6 @@ class Article < ApplicationRecord
   private
 
     def sanitize_tags(text)
-		  text.downcase.split.uniq
+		  text.capitalize.split.uniq
     end
 end
