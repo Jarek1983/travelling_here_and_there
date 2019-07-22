@@ -39,20 +39,26 @@
 
           <li class="nav-item">
             <%= link_to 'Utwórz konto', new_user_registration_path, class: 'nav-link'%>
-          </li> 
+          </li>
 
           <% end %>
+                 
         </ul>
-     
-            <div class="form-inline mt-2 mt-md-0 pb-2">
+
+          <div class="form-inline ">
           
+            <div class="p-1">  
               <%= form_tag articles_path, method: :get do %>
-              <%= text_field_tag :q, "", placeholder: "Znajdź tag", class:"form-control mr-sm-2" %>
-              <%= submit_tag "Wyszukaj", class:"btn btn-light my-2 my-sm-0" %>
+              <%= text_field_tag :q, "", placeholder: "Znajdź tag" %>
+            </div>
+            <div class="p-1">
+              <%= submit_tag "Wyszukaj", class: "btn btn-lg btn-light", style: "font-size:14px; background-color:blue;" %>
+            </div>
             
               <% end %>
               
           </div>
+
     </div>
 </nav>
   

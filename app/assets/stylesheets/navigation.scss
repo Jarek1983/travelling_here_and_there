@@ -1,3 +1,6 @@
+.form-inline {
+	background-color: #343a40;
+}
 nav {
 	height: 12vh;
 	font-size: 2.6vh;
@@ -29,11 +32,11 @@ nav {
 
 	nav {
 		height: 14vh;
-		font-size: 3vh;
+		font-size: 5vh;
 	}
 
 	.navbar-brand {
-		font-size: 3vh;
+		font-size: 5vh;
 		}
 }
 
@@ -87,6 +90,14 @@ nav {
 	-o-transition: border 0.2s easy;
 	transition: border 0.2s easy;
 	color: #bbbbbb !important;
+}
+.nav-item form {
+	background-color: #343a40;
+}
+
+.nav-item {
+	margin: 0;
+	padding: 0;
 }
 
 .nav-item a:hover {
