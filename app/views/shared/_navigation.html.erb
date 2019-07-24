@@ -7,38 +7,38 @@
       <div class="collapse navbar-collapse" id="navbarsExample01">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <%= link_to 'Świat', articles_path, class: 'nav-link' %>
+            <%= link_to 'Świat', articles_path, class: 'nav-link pl-2' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Youtube', "https://www.youtube.com/channel/UCd1UQnE4_p_lsIS5v4F7e0g?view_as=subscriber", target: :_blank, class: 'nav-link' %>
+            <%= link_to 'Youtube', "https://www.youtube.com/channel/UCd1UQnE4_p_lsIS5v4F7e0g?view_as=subscriber", target: :_blank, class: 'nav-link pl-2' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'O mnie', about_index_path, class: 'nav-link' %>
+            <%= link_to 'O mnie', about_index_path, class: 'nav-link pl-2' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Kontakt', new_message_path, class: 'nav-link' %>
+            <%= link_to 'Kontakt', new_message_path, class: 'nav-link pl-2' %>
           </li>
 
           <% if current_user && current_user.admin? %>
 
           <li class="nav-item">
-            <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: 'nav-link pl-2' %>
           </li>
 
           <% elsif current_user %>
 
           <li class="nav-item">
-            <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            <%= link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: 'nav-link pl-2' %>
           </li>
             
           <% else %>
 
           <li class="nav-item">
-            <%= link_to 'Zaloguj', new_user_session_path, class: 'nav-link'%>
+            <%= link_to 'Zaloguj', new_user_session_path, class: 'nav-link pl-2'%>
           </li>
 
           <li class="nav-item">
-            <%= link_to 'Utwórz konto', new_user_registration_path, class: 'nav-link'%>
+            <%= link_to 'Utwórz konto', new_user_registration_path, class: 'nav-link pl-2'%>
           </li>
 
           <% end %>
@@ -49,10 +49,7 @@
           
             <div class="p-1">  
               <%= form_tag articles_path, method: :get do %>
-              <%= text_field_tag :q, "", placeholder: "Znajdź tag" %>
-            </div>
-            <div class="p-1">
-              <%= submit_tag "Wyszukaj", class: "btn btn-lg btn-light", style: "font-size:14px; background-color:blue;" %>
+              <%= text_field_tag :q, "", placeholder: "Znajdź tag", class:"text-center" %>
             </div>
             
               <% end %>
