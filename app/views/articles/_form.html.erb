@@ -3,7 +3,7 @@
 	<%= render 'common/errors', model: @article %>
 
 		 <%= simple_form_for @article do |f| %>
-		    <%= f.input :title, label: 'Miasto:', as: :trix_editor %>
+		    <%= f.input :title, label: 'Miasto:'%>
 		    <%= f.input :text, label: 'Wpisz tekst:', as: :trix_editor %>
 		    <%= f.input :tags, label: 'Wskaż tag:' %> 
 	    	<%= f.input :image, label: "Zdjęcie" %>
