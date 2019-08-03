@@ -25,6 +25,7 @@
 html {height: 100%;}
 
 body {
+
     width: 100%;
     min-height: 100%; 
     position: relative; 
@@ -35,61 +36,85 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     touch-action: manipulation;
+
 }
 
 .form-control {
+
   border-radius: 12px;
+
 }
 
 .image_welcome {
+
     width: 75%;
+
 }
 
 .sponsored {
+
   background: #DDDDDD;
+
 }
 
 .unpublished {
+
   opacity: 0.5;
   background: #CCCCCC;
+
 }
 
 .notice, .alert {
+
   font-size :1.4rem;
   padding-top :7%;
   text-align: center;
   color: RGB(47, 79, 79);
+
 }
 
 .new_submit {
-    width: 24vh;
+
+  width: 24vh;
+
 }
 
 /*button for messages/new */
 
 .new_submit2 {
-    width: 28vh !important;
+
+  width: 28vh !important;
+
 }
 
 @media screen and (max-width: 1200px) {
+
   .new_submit {
+
     width: 32vh;
+
   }
 }
 
 @media only screen and (max-width: 1023px),
 (min-device-width: 992px) and (max-device-width: 1023px) {
 
+
   .image_welcome {
+
     width: 80%;
+
   }
+
 }
 
 @media only screen and (max-width: 991px),
 (min-device-width: 769px) and (max-device-width: 991px) {
 
   .image_welcome {
+
     width: 100%;
+
     }
 }
       

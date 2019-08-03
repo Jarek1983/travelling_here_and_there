@@ -26,11 +26,12 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 public/uploads/
+
 .env
+localhost.crt
+localhost.key
 /config/database.yml
-/config/environments/development.rb
-/config/environments/production.rb
-/config/environments/test.rb
+/config/environments/*
 /config/secrets.yml
 /config/initializers/recaptcha.rb
 

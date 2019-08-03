@@ -1,38 +1,53 @@
 <div class="container pt-2 text-center">
+
   <%= form_for(@message) do |f| %>
 
     <div class="row">
+
       <div class="col-25">
        	<%= f.label :Imię %>      
        </div>
+
       <div class="col-75">
         <%= f.text_field :name %>
       </div>
+
     </div>
+
     <div class="row">
+
       <div class="col-25">
         <%= f.label :Email %>
       </div>
+
       <div class="col-75">
         <%= f.text_field :email %>
       </div>
+
     </div>
+
     <div class="row">
+
       <div class="col-25">
         <%= f.label :tekst %>
       </div>
+
       <div class="col-75 pb-2">
         <%= f.text_area :body, style:"height:200px" %>
       </div>
+
     </div>
+
     <div class="row">
       <%= f.submit "Wyślij", class: 'btn btn-primary new_submit2' %>
     </div>
-    <% end %>
+
+  <% end %>
 
     <div class="pt-3 pb-2 captcha">
-			<%= recaptcha_tags %>
-	</div>
+      <%= recaptcha_tags %>
+    </div>
+    
 </div>
 
 <%= render 'shared/opinion' %>

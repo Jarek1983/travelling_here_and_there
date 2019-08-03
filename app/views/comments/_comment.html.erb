@@ -10,12 +10,12 @@
 	    <%= comment.user.email %>
 	</p>
 
-	   	<% if comment.user == current_user || current_user&.admin? %>
+	<% if comment.user == current_user || current_user&.admin? %>
 	   	
-			<%= link_to 'Usuń', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete, data: {confirm: 'Czy na pewno?'}, class: "btn btn-lg btn-danger new_submit" %>
-			<%= link_to 'Edytuj', edit_article_comment_path(article_id: comment.article.id, id: comment.id), class: "btn btn-lg btn-info new_submit" %>
+      <%= link_to 'Usuń', article_comment_path(article_id: comment.article.id, id: comment.id), method: :Delete, data: {confirm: 'Czy na pewno?'}, class: "btn btn-lg btn-danger new_submit" %>
+      <%= link_to 'Edytuj', edit_article_comment_path(article_id: comment.article.id, id: comment.id), class: "btn btn-lg btn-info new_submit" %>
 
-		<% end %>
+    <% end %>
 
 </div>
 

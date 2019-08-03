@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :find_article, only: [:show, :edit, :update, :destroy, :toggle_visibility]
   before_action :authenticate_user!, except: [:show, :index]
-  # before_action :authorize_article, only: [:destroy, :edit, :update]
   before_action :admin_authorize, except: [:index, :show]
   
   def index
@@ -10,10 +9,11 @@ class ArticlesController < ApplicationController
     else
         @articles = Article.published
     end
-  	# binding.pry
+
     @most_commented = @articles.most_commented
-    @articles = @articles.includes(:user).order(id: :desc).page(params[:page]).per(8)
+    @articles = @articles.includes(:user).order(id: :desc).page(params[:page]).per(9)
     @articles = @articles.where("? = any(tags)", params[:q]) if params[:q].present?
+ 
   end
 
   def new
@@ -21,26 +21,24 @@ class ArticlesController < ApplicationController
   end
 
   def create
-  	# binding.pry https://gist.github.com/lfender6445/9919357
-  	# https://github.com/rweng/pry-rails
-  	# article_params = params.require(:article).permit(:title, :text) #permit stosujemy tylko wtedy, gdy modyfikujemy rekord
-  	@article = Article.new(article_params)
+
+    @article = Article.new(article_params)
     @article.user = current_user
-    # @article.user_id = current_user.id
+
       if @article.save
         flash[:notice] = "Utworzyłeś artykuł"
         redirect_to article_path(@article)
       else
         render 'new'
       end
+
   end
 
   def show
     @articles = Article.find_by_id(session[:article_id])
     @comment = Comment.new
     @like = Like.find_or_initialize_by(article: @article, user: current_user)
-    # @article = Article.find(params[:id])
-    # find_article
+
     respond_to do |format|
       format.html do
         @article.increment!(:views_count)
@@ -62,30 +60,22 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    # @article = Article.find(params[:id])
-    # if @current_user ||= User.find(session[:user_id]) if session[:user_id]
     session[:article_id] = @article.id
-    # return unless authorize_article
   end
 
   def update
-  	# article_params = params.require(:article).permit(:title, :text)
-    # @article = Article.find(params[:id])
-    # find_article
-    # return unless authorize_article
 
-	  if  @article.update(article_params)
+    if  
+      @article.update(article_params)
       flash[:notice] = "Zaktualizowałeś artykuł"
-	    redirect_to article_path(@article)
-	  else
-		  render 'edit'
-	  end
+      redirect_to article_path(@article)
+    else
+      render 'edit'
+    end
+
   end
 
   def destroy
-    # @article = Article.find(params[:id])
-    # find_article
-    # return unless authorize_article
 
     @article.destroy
     flash[:alert] = "Usunąłeś artykuł"
@@ -104,22 +94,14 @@ class ArticlesController < ApplicationController
     redirect_to new_user_session_path, 
     alert: "Only for Admin!" unless current_user.admin
   end 
-
-  # def authorize_article
-  #   if current_user == current_user&.admin?
-  #     flash[:alert] = "You have done!"
-  #     redirect_to articles_path
-  #     return false
-  #   end
-  #   true
-  # end
-
+  
   def article_params
     params.require(:article).permit(:title,:text, :tags, :image, :image_second, :image_third, :image_fourth, :image_fifth, :image_sixth)
   end
 
   def find_article
-     @article = if current_user&.admin?
+
+    @article = if current_user&.admin?
                   Article.friendly.find(params[:id])
                 else
                   Article.published.friendly.find(params[:id])

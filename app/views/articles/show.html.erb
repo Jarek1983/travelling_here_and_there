@@ -46,7 +46,8 @@
             <% end %>
           </p>
 
-        </div>
+      </div>
+
           <p class="text-justify">
 
             <%=sanitize @article.text %>
@@ -65,7 +66,7 @@
 
           <% end %>
 
-          <p class="text-center"><strong>Tags:</strong>
+          <p class="text-center text-capitalize"><strong>Tags:</strong>
 
             <% @article.tags.each do |t| %>
             <%=link_to t, articles_path(q: t), class: "badge badge-dark"%>
@@ -102,29 +103,6 @@
 
           <% end %>
 
-   <!--        <div class="pt-3">
-
-            <%= link_to 'Powrót', articles_path, class: "btn btn-lg btn-primary" %>
-
-            <% if @article.user == current_user && current_user&.admin? %> 
-
-              <%= link_to 'Edytuj', edit_article_path(@article), class: "btn btn-lg btn-info" %>
-
-
-              <%= link_to 'Usuń', article_path(@article), method: :delete, 
-                          data: {confirm: 'Are you sure?'}, class: "btn btn-lg btn-danger" %>
-
-            <% end %>
-
-            <% if current_user&.admin? %>
-
-              <%= link_to @article.published? ? "Nie publikuj" : "Publikuj", toggle_visibility_article_path(@article), class: "btn btn-lg btn-info" %>
-
-            <% end %>
-
-          </div>
- -->
-
           <% if sponsored_article? @article %>
             
             <p>Komentarze zablokowane</p>
@@ -139,7 +117,7 @@
 
               </div>
 
-              <p class="pt-3 text-justify">Aby rozwinąć/zwinąć temat kliknij przycisk "Pokaż/Ukryj". Jeśli chcesz dodać/usunąć/edytować komentarz lub wysłać wiadomość zarejestruj się, a następnie zaloguj się. Autor bloga nie ponosi odpowiedzialności za treści opublikowane przez użytkowników. Celem wystawiania komentarzy jest wolna wymiana myśli, swoich spostrzeżeń, opinii i sugestii. Użytkownik publikuje swoje komentarze na własną odpowiedzialność, tym samym ponosi wyłączną odpowiedzialność karną i cywilną za umieszczone treści swoich wypowiedzi.Autorzy bloga nie ponoszą odpowiedzialności za treści opublikowane przez użytkowników.</p>
+              <p class="pt-3 text-justify">Aby rozwinąć/zwinąć temat kliknij przycisk "Pokaż/Ukryj". Jeśli chcesz dodać/usunąć/edytować komentarz lub wysłać wiadomość zarejestruj się, a następnie zaloguj się. Autor bloga nie ponosi odpowiedzialności za treści opublikowane przez użytkowników. Celem wystawiania komentarzy jest wolna wymiana myśli, swoich spostrzeżeń, opinii i sugestii. Użytkownik publikuje swoje komentarze na własną odpowiedzialność, tym samym ponosi wyłączną odpowiedzialność karną i cywilną za umieszczone treści swoich wypowiedzi. Autorzy bloga nie ponoszą odpowiedzialności za treści opublikowane przez użytkowników.</p>
 
               <div id="hide">
 
@@ -151,7 +129,6 @@
 
           <% end %>
 
- 
       </div>
   </div>
 </section>

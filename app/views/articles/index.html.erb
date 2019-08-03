@@ -1,62 +1,80 @@
-
 <section class="container-fluid pt-5 pb-5">
+
   <div class="row pt-5">
+
       <div class="col-12">
 
-            <% if current_user && current_user&.admin? %>
+        <% if current_user && current_user&.admin? %>
 
-            <%= link_to 'Dodaj', new_article_path, class: "btn btn-primary new_submit" %> <hr/>
+          <%= link_to 'Dodaj', new_article_path, class: "btn btn-primary new_submit" %> <hr/>
 
-            <% end %>
+        <% end %>
 
-          <div class="row">
-              <% @articles.each do |article| %>
-                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                  <div class="card"> 
-                          <div class="card-topper p-3">
-                              <% if article.image.present? %>
+        <div class="row">
+             
+          <% @articles.each do |article| %>
 
-                                <%= link_to article_path(article) do %>
+            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
 
-                                  <%= image_tag article.image.url, style: "width:100%; height:300px;object-fit:cover;" %>
+              <div class="card"> 
+                  <div class="card-topper p-3">
+
+                    <% if article.image.present? %>
+
+                      <%= link_to article_path(article) do %>
+
+                      <%= image_tag article.image.url, style: "width:100%; height:300px;object-fit:cover;" %>
                                 
-                                <% end %>
+                      <% end %>
 
-                              <% else %>
+                    <% else %>
 
-                              No image
+                      No image
 
-                              <% end %>
-                          </div>
-                          <div class="card-block text-center">
-                               <h4 class="card-title text-center text-capitalize">
-                                  <%=sanitize article.title %>
-                               </h4>
+                    <% end %>
 
-                                <h4 class="text-capitalize"> 
-                                  <% article.tags.each do |x| %>
-                                    <%= link_to x, articles_path(q: x), class: "badge badge-dark" %>
-                                  <% end %> 
+                  </div>
+
+                  <div class="card-block text-center">
+
+                    <h4 class="card-title text-center text-capitalize">
+                      <%=sanitize article.title %>
+                    </h4>
+
+                    <h4 class="text-capitalize"> 
+
+                      <% article.tags.each do |x| %>
+
+                        <%= link_to x, articles_path(q: x), class: "badge badge-dark" %>
+
+                      <% end %> 
                                 </h4>
 
-                                <h4><%= link_to "Summary", article_path(article), class: "btn btn-md btn-info summary", id: "summary-#{article.id}" %>
+                    <h4><%= link_to "Summary", article_path(article), class: "btn btn-md btn-info summary", id: "summary-#{article.id}" %>
                                    
-                                 </h4>
+                    </h4>
                   
-                                <% if article.user == current_user || current_user&.admin? %>
+                    <% if article.user == current_user || current_user&.admin? %>
 
-                                  <div class="p-2">
-                                    <%= link_to 'Pokaż', article_path(article), class: "btn btn-lg btn-primary" %>
-                                    <%= link_to 'Edytuj', edit_article_path(article), class: "btn btn-lg btn-info" %>
-                                    <%= link_to 'Usuń', article_path(article), method: :delete, data: {confirm: 'Czy na pewno usunąć?'}, class: "btn btn-lg btn-danger" %>
-                                  </div>
-                                <% end %>
+                      <div class="p-2">
 
-                          </div>
+                        <%= link_to 'Pokaż', article_path(article), class: "btn btn-lg btn-primary" %>
+                        <%= link_to 'Edytuj', edit_article_path(article), class: "btn btn-lg btn-info" %>
+                        <%= link_to 'Usuń', article_path(article), method: :delete, data: {confirm: 'Czy na pewno usunąć?'}, class: "btn btn-lg btn-danger" %>
+
+                      </div>
+                                
+                    <% end %>
+
                   </div>
+
                 </div>
-              <% end %>
-          </div>
+
+              </div>
+
+          <% end %>
+
+        </div>
         
 
         <div class="pt-5">
@@ -66,5 +84,7 @@
         </div>
 
       </div>
+
   </div>
+
 </section>

@@ -1,20 +1,27 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
   <%= link_to 'Menu', welcome_index_path, class: 'navbar-brand' %>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExample01">
+
         <ul class="navbar-nav mr-auto">
+
           <li class="nav-item active">
             <%= link_to 'Świat', articles_path, class: 'nav-link pl-2' %>
           </li>
+
           <li class="nav-item">
             <%= link_to 'Youtube', "https://www.youtube.com/channel/UCd1UQnE4_p_lsIS5v4F7e0g?view_as=subscriber", target: :_blank, class: 'nav-link pl-2' %>
           </li>
+
           <li class="nav-item">
             <%= link_to 'O mnie', about_index_path, class: 'nav-link pl-2' %>
           </li>
+          
           <li class="nav-item">
             <%= link_to 'Kontakt', new_message_path, class: 'nav-link pl-2' %>
           </li>
@@ -45,7 +52,7 @@
                  
         </ul>
 
-          <div class="form-inline ">
+          <div class="form-inline text-capitalize">
           
             <div class="p-1">  
               <%= form_tag articles_path, method: :get do %>
