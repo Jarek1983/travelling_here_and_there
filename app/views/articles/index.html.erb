@@ -41,14 +41,14 @@
                       <%=sanitize article.title %>
                     </h4>
 
-                    <h4 class="text-capitalize"> 
+                    <h4> 
 
                       <% article.tags.each do |x| %>
 
                         <%= link_to x, articles_path(q: x), class: "badge badge-dark" %>
 
                       <% end %> 
-                                </h4>
+                    </h4>
 
                     <h4><%= link_to "Summary", article_path(article), class: "btn btn-md btn-info summary", id: "summary-#{article.id}" %>
                                    

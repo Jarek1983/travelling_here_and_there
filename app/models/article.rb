@@ -38,6 +38,6 @@ class Article < ApplicationRecord
   private
 
     def sanitize_tags(text)
-      text.split.uniq
+      text.split.uniq.map(&:capitalize)
     end
 end

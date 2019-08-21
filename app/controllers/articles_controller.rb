@@ -21,9 +21,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-
     @article = Article.new(article_params)
     @article.user = current_user
+    @article.tags.each(&:upcase)
 
       if @article.save
         flash[:notice] = "Utworzyłeś artykuł"

@@ -66,14 +66,17 @@
 
           <% end %>
 
-          <p class="text-center text-capitalize"><strong>Tags:</strong>
+          <div class="text-center pb-2">
 
-            <% @article.tags.each do |t| %>
-            <%=link_to t, articles_path(q: t), class: "badge badge-dark"%>
-      
-          <% end %>
+            <strong>Tags:</strong>
 
-          </p>
+              <% @article.tags.each do |tag| %>
+
+                <%= link_to tag, articles_path(q: tag), class:"badge badge-pill badge-dark" %>
+
+              <% end %>
+
+          </div>
 
           <p class="text-center">
 
