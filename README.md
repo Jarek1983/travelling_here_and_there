@@ -1,24 +1,19 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby version 2.5.1
+* Rails 5.2
+* Database - PostgreSQL
+* Bootstrap 4.3.1
+* Jquery-rails
+* Devise - authenticate 
+* Simple form 
+* Friendly Id
+* Trix form simple form
+* Recaptcha for mailer
+* Carrievawe
+* Mini Magic for carrievawe
+* Will Paginate
+* Mail
+* Cloudinary
+* Font-awesome-rails
+* Kaminari - pagination
+* Cloudinary
