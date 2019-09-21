@@ -11,8 +11,6 @@
 * Recaptcha for mailer
 * Carrievawe
 * Mini Magic for carrievawe
-* Will Paginate
-* Mail
 * Cloudinary
 * Font-awesome-rails
 * Kaminari - pagination
